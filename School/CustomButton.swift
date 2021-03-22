@@ -17,11 +17,11 @@ class CustomButton: UIButton{
 //        }
         didSet{
             print(self.isEnabled)
-            foo(self.isEnabled)
+            //foo(self.isEnabled)
         }
     }
     
     //var closure: () ->
-    func foo(_ isEnabled : Bool){}
+    //func foo(_ isEnabled : Bool){}
     
 }

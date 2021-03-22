@@ -132,6 +132,9 @@
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                         <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <action selector="tapLoginTextField" destination="UQu-2p-AK5" eventType="touchUpInside" id="AN4-py-9YV"/>
+                                        </connections>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Password" borderStyle="roundedRect" minimumFontSize="24" translatesAutoresizingMaskIntoConstraints="NO" id="qdi-CX-qDE">
                                         <rect key="frame" x="0.0" y="88" width="382" height="70"/>
@@ -191,10 +194,13 @@
                             <constraint firstItem="HAo-yx-7Q9" firstAttribute="leading" secondItem="g6C-Ff-Kbf" secondAttribute="leading" id="8Um-BY-A6b"/>
                             <constraint firstItem="g6C-Ff-Kbf" firstAttribute="trailing" secondItem="HAo-yx-7Q9" secondAttribute="trailing" id="9g5-Ci-dMu"/>
                             <constraint firstItem="Z6a-Ju-FUo" firstAttribute="top" secondItem="g6C-Ff-Kbf" secondAttribute="top" constant="52" id="HMC-ms-IYS"/>
+                            <constraint firstItem="Z6a-Ju-FUo" firstAttribute="centerX" secondItem="g6C-Ff-Kbf" secondAttribute="centerX" id="I4T-J2-HpX"/>
                             <constraint firstItem="g6C-Ff-Kbf" firstAttribute="bottom" secondItem="HAo-yx-7Q9" secondAttribute="bottom" constant="16" id="TV5-JX-vpT"/>
+                            <constraint firstItem="HAo-yx-7Q9" firstAttribute="centerX" secondItem="g6C-Ff-Kbf" secondAttribute="centerX" id="WfQ-wr-Iq0"/>
                             <constraint firstAttribute="trailing" secondItem="Z6a-Ju-FUo" secondAttribute="trailing" constant="16" id="eSg-kT-DnW"/>
                             <constraint firstItem="tIp-MQ-JCr" firstAttribute="leading" secondItem="g6C-Ff-Kbf" secondAttribute="leading" constant="16" id="fKB-cg-IPt"/>
                             <constraint firstItem="HAo-yx-7Q9" firstAttribute="top" relation="greaterThanOrEqual" secondItem="tIp-MQ-JCr" secondAttribute="bottom" constant="16" id="hMA-jZ-lKd"/>
+                            <constraint firstItem="tIp-MQ-JCr" firstAttribute="centerX" secondItem="g6C-Ff-Kbf" secondAttribute="centerX" id="hSU-VQ-YPW"/>
                             <constraint firstItem="g6C-Ff-Kbf" firstAttribute="trailing" secondItem="tIp-MQ-JCr" secondAttribute="trailing" constant="16" id="kqA-qU-PnO"/>
                             <constraint firstItem="tIp-MQ-JCr" firstAttribute="top" secondItem="Z6a-Ju-FUo" secondAttribute="bottom" constant="76" id="xx9-7I-PeN"/>
                         </constraints>
@@ -208,7 +214,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vzg-CM-56L" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-331.8840579710145" y="718.52678571428567"/>
+            <point key="canvasLocation" x="-768" y="75"/>
         </scene>
     </scenes>
     <resources>
