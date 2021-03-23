@@ -7,17 +7,15 @@
 
 import UIKit
 
+// кастомный класс кнопки
 class CustomButton: UIButton{
-    override var isEnabled: Bool{
-//        set {
-//            self.isEnabled = newValue
-//        }
-//        get{
-//            return self.isEnabled
-//        }
+    
+    // переопределяем свойство
+    override var isHighlighted: Bool{
+        
         didSet{
-            print(self.isEnabled)
-            //foo(self.isEnabled)
+            // назначаем кнопке случайный цвет
+            self.backgroundColor = UIColor(red: .random(in: 0...1), green: .random(in: 0...1), blue: .random(in: 0...1), alpha: 1)
         }
     }
     

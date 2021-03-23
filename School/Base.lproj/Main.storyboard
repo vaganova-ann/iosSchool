@@ -154,7 +154,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="HAo-yx-7Q9">
                                 <rect key="frame" x="0.0" y="729" width="414" height="117"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IvS-an-1A8">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IvS-an-1A8" customClass="CustomButton" customModule="School" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="51"/>
                                         <color key="backgroundColor" systemColor="systemBlueColor"/>
                                         <constraints>
@@ -166,7 +166,7 @@
                                         </state>
                                         <state key="disabled" title="Не войти"/>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IGZ-iO-s24">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IGZ-iO-s24" customClass="CustomButton" customModule="School" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="66" width="414" height="51"/>
                                         <color key="backgroundColor" systemColor="systemBlueColor"/>
                                         <constraints>
