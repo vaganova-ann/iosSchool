@@ -8,10 +8,11 @@
 import UIKit
 
 class ViewController: UIViewController, UITextFieldDelegate {
-    @IBOutlet weak private var titelLable: UILabel!
+    //@IBOutlet weak private var titelLable: UILabel!
     @IBOutlet weak private var loginButton: UIButton!
     @IBOutlet weak private var loginTextField: UITextField!
     @IBOutlet weak private var passwordTextField: UITextField!
+    @IBOutlet weak private var scrollView: UIScrollView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,6 +36,11 @@ class ViewController: UIViewController, UITextFieldDelegate {
         // тип клавиатуры при работе с loginTextField
         loginTextField.keyboardType = UIKeyboardType.emailAddress
         
+        registerKeyboardNotification()
+    }
+    
+    deinit {
+        removeKeyboardNotifications()
     }
     
     // функция для сворачивания клавиатуры
@@ -66,6 +72,27 @@ class ViewController: UIViewController, UITextFieldDelegate {
             hideKeyboard()
         }
         return true
+    }
+    
+    func registerKeyboardNotification(){
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+        
+    }
+    
+    func removeKeyboardNotifications(){
+        NotificationCenter.default.removeObserver(self)
+    }
+    
+    @objc func keyboardWillShow(_ notification: Notification){
+        let userInfo = notification.userInfo
+        let kbFrameSize = (userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
+        scrollView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: kbFrameSize.height, right: 0)
+    }
+    
+    @objc func keyboardWillHide(_ notification: Notification){
+        scrollView.contentInset = UIEdgeInsets.zero
     }
     
 }
