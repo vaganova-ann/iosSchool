@@ -14,10 +14,12 @@ class CustomButton: UIButton{
     override var isHighlighted: Bool{
         
         didSet{
-            // назначаем кнопке случайный цвет
-            self.backgroundColor = UIColor(red: .random(in: 0...1), green: .random(in: 0...1), blue: .random(in: 0...1), alpha: 1)
+            self.backgroundColor = self.highlightedColor
         }
     }
+    
+    // новое свойство
+    var highlightedColor:UIColor = UIColor.red
     
     //var closure: () ->
     //func foo(_ isEnabled : Bool){}

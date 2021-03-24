@@ -29,6 +29,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
         
         // тип return при работе с loginTextField
         loginTextField.returnKeyType = .next
+        // тип return при работе с passwordTextField
+        passwordTextField.returnKeyType = .done
         
         // тип клавиатуры при работе с loginTextField
         loginTextField.keyboardType = UIKeyboardType.emailAddress
@@ -58,10 +60,9 @@ class ViewController: UIViewController, UITextFieldDelegate {
     // переопределенная функция для переключения между textField с помощью return
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if textField == loginTextField {
-            passwordTextField.returnKeyType = .done // тип return при работе с passwordTextField
             passwordTextField.becomeFirstResponder()
             
-        } else {
+        } else if textField == passwordTextField {
             hideKeyboard()
         }
         return true
