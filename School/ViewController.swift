@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITextFieldDelegate {
+class ViewController: UIViewController {
     //@IBOutlet weak private var titelLable: UILabel!
     @IBOutlet weak private var loginButton: UIButton!
     @IBOutlet weak private var loginTextField: UITextField!
@@ -23,10 +23,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
         
         let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
         view.addGestureRecognizer(gestureRecognizer)
-        
-        // delegate для переключения между textField с помощью return
-        loginTextField.delegate = self
-        passwordTextField.delegate = self
         
         // тип return при работе с loginTextField
         loginTextField.returnKeyType = .next
@@ -63,16 +59,15 @@ class ViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
-    // переопределенная функция для переключения между textField с помощью return
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        if textField == loginTextField {
-            passwordTextField.becomeFirstResponder()
-            
-        } else if textField == passwordTextField {
-            hideKeyboard()
-        }
-        return true
+    @IBAction func loginTextFieldPrimaryActionTriggered(_ sender: UITextField) {
+        passwordTextField.becomeFirstResponder()
     }
+    
+    
+    @IBAction func passwordTextFieldPrimaryActionTriggered(_ sender: UITextField) {
+        hideKeyboard()
+    }
+    
     
     func registerKeyboardNotification(){
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
