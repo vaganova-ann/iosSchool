@@ -7,8 +7,8 @@
 
 import UIKit
 
-class ViewController: UIViewController {
-    //@IBOutlet weak private var titelLable: UILabel!
+class ViewController: UIViewController, UIScrollViewDelegate {
+    @IBOutlet weak private var titelLable: UILabel!
     @IBOutlet weak private var loginButton: UIButton!
     @IBOutlet weak private var loginTextField: UITextField!
     @IBOutlet weak private var passwordTextField: UITextField!
@@ -33,6 +33,8 @@ class ViewController: UIViewController {
         loginTextField.keyboardType = UIKeyboardType.emailAddress
         
         registerKeyboardNotification()
+        
+        scrollView.delegate = self
     }
     
     deinit {
@@ -80,7 +82,7 @@ class ViewController: UIViewController {
         NotificationCenter.default.removeObserver(self)
     }
     
-    @objc func keyboardWillShow(_ notification: Notification){
+    @objc func keyboardWillShow(notification: Notification){
         let userInfo = notification.userInfo
         let kbFrameSize = (userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
         scrollView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: kbFrameSize.height, right: 0)
@@ -88,6 +90,12 @@ class ViewController: UIViewController {
     
     @objc func keyboardWillHide(_ notification: Notification){
         scrollView.contentInset = UIEdgeInsets.zero
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let offset = scrollView.contentOffset.y
+        let scale = min(max(1.0 - offset / 100.0, 0.0), 10.0)
+        titelLable.transform = CGAffineTransform(scaleX: 1.0, y: scale)
     }
     
 }

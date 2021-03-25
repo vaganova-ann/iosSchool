@@ -233,6 +233,7 @@
                         <outlet property="loginTextField" destination="LdR-dO-nG4" id="dDS-5f-BKu"/>
                         <outlet property="passwordTextField" destination="gJE-88-l0k" id="3Qt-Od-AB4"/>
                         <outlet property="scrollView" destination="WSx-Um-BDc" id="JhF-Yp-GWW"/>
+                        <outlet property="titelLable" destination="PoJ-Zq-M8o" id="uM8-gN-FvL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="N4G-nS-muw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
