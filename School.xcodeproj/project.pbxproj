@@ -21,6 +21,9 @@
 		E74ADC602602383C00555080 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E74ADC5E2602383C00555080 /* Main.storyboard */; };
 		E74ADC622602383D00555080 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E74ADC612602383D00555080 /* Assets.xcassets */; };
 		E74ADC652602383D00555080 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E74ADC632602383D00555080 /* LaunchScreen.storyboard */; };
+		E7BB55C42614AAF600FC0015 /* ContactDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7BB55C22614AAF600FC0015 /* ContactDetailsViewController.swift */; };
+		E7BB55C82614AAFF00FC0015 /* PesikCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7BB55C62614AAFF00FC0015 /* PesikCell.swift */; };
+		E7BB55CD2614B4ED00FC0015 /* PesikCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7BB55C72614AAFF00FC0015 /* PesikCell.xib */; };
 		E7C4EBB22604E542006033FA /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C4EBB12604E542006033FA /* CustomButton.swift */; };
 /* End PBXBuildFile section */
 
@@ -41,6 +44,9 @@
 		E74ADC612602383D00555080 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E74ADC642602383D00555080 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E74ADC662602383D00555080 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E7BB55C22614AAF600FC0015 /* ContactDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactDetailsViewController.swift; sourceTree = "<group>"; };
+		E7BB55C62614AAFF00FC0015 /* PesikCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PesikCell.swift; sourceTree = "<group>"; };
+		E7BB55C72614AAFF00FC0015 /* PesikCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PesikCell.xib; sourceTree = "<group>"; };
 		E7C4EBB12604E542006033FA /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -112,7 +118,7 @@
 				E71B4F21260E201A00482EE0 /* Protocols */,
 				E71B4F08260E055200482EE0 /* Service */,
 				E71B4F10260E0E6200482EE0 /* Extention */,
-				E7D5E0952611AB3F007E8864 /* ContactsViewController */,
+				E7BB55BE2614AAC600FC0015 /* Modules */,
 				E7C4EBB12604E542006033FA /* CustomButton.swift */,
 				E74ADC5E2602383C00555080 /* Main.storyboard */,
 				E74ADC5C2602383C00555080 /* ViewController.swift */,
@@ -120,6 +126,33 @@
 				E74ADC632602383D00555080 /* LaunchScreen.storyboard */,
 			);
 			path = School;
+			sourceTree = "<group>";
+		};
+		E7BB55BE2614AAC600FC0015 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				E7BB55C02614AACD00FC0015 /* ContactDetailsViewController */,
+				E7D5E0952611AB3F007E8864 /* ContactsViewController */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		E7BB55C02614AACD00FC0015 /* ContactDetailsViewController */ = {
+			isa = PBXGroup;
+			children = (
+				E7BB55CB2614AB0600FC0015 /* Cells */,
+				E7BB55C22614AAF600FC0015 /* ContactDetailsViewController.swift */,
+			);
+			path = ContactDetailsViewController;
+			sourceTree = "<group>";
+		};
+		E7BB55CB2614AB0600FC0015 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				E7BB55C62614AAFF00FC0015 /* PesikCell.swift */,
+				E7BB55C72614AAFF00FC0015 /* PesikCell.xib */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		E7D5E0922611AA2B007E8864 /* PersonTableViewCell */ = {
@@ -211,6 +244,7 @@
 				E74ADC622602383D00555080 /* Assets.xcassets in Resources */,
 				E71B4F05260E04EC00482EE0 /* PersonTableViewCell.xib in Resources */,
 				E74ADC602602383C00555080 /* Main.storyboard in Resources */,
+				E7BB55CD2614B4ED00FC0015 /* PesikCell.xib in Resources */,
 				E71B4F1E260E1E3F00482EE0 /* AnimalTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -224,11 +258,13 @@
 			files = (
 				E74ADC5D2602383C00555080 /* ViewController.swift in Sources */,
 				E71B4F24260E203700482EE0 /* ConfigurableRow.swift in Sources */,
+				E7BB55C82614AAFF00FC0015 /* PesikCell.swift in Sources */,
 				E71B4EFB260E02B600482EE0 /* ContactsViewController.swift in Sources */,
 				E74ADC592602383C00555080 /* AppDelegate.swift in Sources */,
 				E71B4F0E260E0A3400482EE0 /* ContactsTableViewDataSource.swift in Sources */,
 				E71B4F15260E188300482EE0 /* UIImage+ContactsImage.swift in Sources */,
 				E71B4F04260E04EC00482EE0 /* PersonTableViewCell.swift in Sources */,
+				E7BB55C42614AAF600FC0015 /* ContactDetailsViewController.swift in Sources */,
 				E71B4F1D260E1E3F00482EE0 /* AnimalTableViewCell.swift in Sources */,
 				E7C4EBB22604E542006033FA /* CustomButton.swift in Sources */,
 				E71B4F12260E0E8B00482EE0 /* NSObject+ClassName.swift in Sources */,

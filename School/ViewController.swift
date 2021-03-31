@@ -59,6 +59,8 @@ class ViewController: UIViewController, UIScrollViewDelegate {
         if let text = passwordTextField.text {
             print("\(text) - текст с поля password")
         }
+        
+        
     }
     
     @IBAction func loginTextFieldPrimaryActionTriggered(_ sender: UITextField) {
