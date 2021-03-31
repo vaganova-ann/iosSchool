@@ -1,5 +1,5 @@
 //
-//  contactsViewController.swift
+//  ContactsViewController.swift
 //  School
 //
 //  Created by Студент 2 on 26.03.2021.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class contactsViewController: UIViewController {
+class ContactsViewController: UIViewController {
     
     private var PersonNames: [String] =
         ["Addie Davis",

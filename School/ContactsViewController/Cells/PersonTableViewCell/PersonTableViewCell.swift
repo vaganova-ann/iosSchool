@@ -28,11 +28,11 @@ class PersonTableViewCell: UITableViewCell, ConfigurableRow {
     @IBOutlet private var titleLable: UILabel!
     @IBOutlet private var portraitImageView: UIImageView!
     
-    func configureWith(_ consigurator: Any) -> UITableViewCell {
+    func configureWith(_ configurator: Any) -> UITableViewCell {
         
-        guard let model = consigurator as? Person
+        guard let model = configurator as? Person
         else {
-            return UITableViewCell()
+            return self
         }
         titleLable.text = model.name
         portraitImageView.image = model.portrait
