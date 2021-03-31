@@ -7,20 +7,37 @@
 
 import UIKit
 
-struct Person {
-    var name: String
+class Person: NSObject, CellConfigurator {
+    
+    var reuseIndentifier: String {
+        get { return PersonTableViewCell.className }
+    }
+    
+    var name: String = ""
     var portrait: UIImage?
+    
+    init(name: String, portrait: UIImage?) {
+        self.name = name
+        self.portrait = portrait
+    }
 }
 
 
-class PersonTableViewCell: UITableViewCell {
+class PersonTableViewCell: UITableViewCell, ConfigurableRow {
     
     @IBOutlet private var titleLable: UILabel!
     @IBOutlet private var portraitImageView: UIImageView!
     
-    func configureWith(_ model: Person) -> Self {
+    func configureWith(_ consigurator: Any) -> UITableViewCell {
+        
+        guard let model = consigurator as? Person
+        else {
+            return UITableViewCell()
+        }
         titleLable.text = model.name
         portraitImageView.image = model.portrait
+        
         return self
     }
+    
 }

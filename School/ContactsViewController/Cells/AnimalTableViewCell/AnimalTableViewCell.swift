@@ -7,19 +7,37 @@
 
 import UIKit
 
-struct Animal {
-    var name: String
+class Animal: NSObject, CellConfigurator {
+    
+    var reuseIndentifier: String {
+        get { return AnimalTableViewCell.className }
+    }
+    
+    var name: String = ""
     var image: UIImage?
+    
+    init(name: String, image: UIImage?) {
+        self.name = name
+        self.image = image
+    }
 }
 
-class AnimalTableViewCell: UITableViewCell {
+
+class AnimalTableViewCell: UITableViewCell, ConfigurableRow {
+    
     
     @IBOutlet private var titleLable: UILabel!
     @IBOutlet private var portraitImageView: UIImageView!
     
-    func configureWith(_ model: Animal) -> Self {
+    func configureWith(_ consigurator: Any) -> UITableViewCell {
+        
+        guard let model = consigurator as? Animal
+        else {
+            return UITableViewCell()
+        }
         titleLable.text = model.name
         portraitImageView.image = model.image
+        
         return self
     }
     

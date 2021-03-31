@@ -10,9 +10,9 @@
 		E71B4EFB260E02B600482EE0 /* contactsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E71B4EFA260E02B600482EE0 /* contactsViewController.swift */; };
 		E71B4F04260E04EC00482EE0 /* PersonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E71B4F02260E04EC00482EE0 /* PersonTableViewCell.swift */; };
 		E71B4F05260E04EC00482EE0 /* PersonTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E71B4F03260E04EC00482EE0 /* PersonTableViewCell.xib */; };
-		E71B4F0E260E0A3400482EE0 /* personTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E71B4F0D260E0A3400482EE0 /* personTableViewDataSource.swift */; };
+		E71B4F0E260E0A3400482EE0 /* ContactsTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E71B4F0D260E0A3400482EE0 /* ContactsTableViewDataSource.swift */; };
 		E71B4F12260E0E8B00482EE0 /* NSObject+ClassName.swift in Sources */ = {isa = PBXBuildFile; fileRef = E71B4F11260E0E8B00482EE0 /* NSObject+ClassName.swift */; };
-		E71B4F15260E188300482EE0 /* UIImage+PortraitImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E71B4F14260E188300482EE0 /* UIImage+PortraitImage.swift */; };
+		E71B4F15260E188300482EE0 /* UIImage+ContactsImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E71B4F14260E188300482EE0 /* UIImage+ContactsImage.swift */; };
 		E71B4F1D260E1E3F00482EE0 /* AnimalTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E71B4F1B260E1E3F00482EE0 /* AnimalTableViewCell.swift */; };
 		E71B4F1E260E1E3F00482EE0 /* AnimalTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E71B4F1C260E1E3F00482EE0 /* AnimalTableViewCell.xib */; };
 		E71B4F24260E203700482EE0 /* ConfigurableRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = E71B4F23260E203700482EE0 /* ConfigurableRow.swift */; };
@@ -28,9 +28,9 @@
 		E71B4EFA260E02B600482EE0 /* contactsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = contactsViewController.swift; sourceTree = "<group>"; };
 		E71B4F02260E04EC00482EE0 /* PersonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonTableViewCell.swift; sourceTree = "<group>"; };
 		E71B4F03260E04EC00482EE0 /* PersonTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PersonTableViewCell.xib; sourceTree = "<group>"; };
-		E71B4F0D260E0A3400482EE0 /* personTableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = personTableViewDataSource.swift; sourceTree = "<group>"; };
+		E71B4F0D260E0A3400482EE0 /* ContactsTableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsTableViewDataSource.swift; sourceTree = "<group>"; };
 		E71B4F11260E0E8B00482EE0 /* NSObject+ClassName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSObject+ClassName.swift"; sourceTree = "<group>"; };
-		E71B4F14260E188300482EE0 /* UIImage+PortraitImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+PortraitImage.swift"; sourceTree = "<group>"; };
+		E71B4F14260E188300482EE0 /* UIImage+ContactsImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+ContactsImage.swift"; sourceTree = "<group>"; };
 		E71B4F1B260E1E3F00482EE0 /* AnimalTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalTableViewCell.swift; sourceTree = "<group>"; };
 		E71B4F1C260E1E3F00482EE0 /* AnimalTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AnimalTableViewCell.xib; sourceTree = "<group>"; };
 		E71B4F23260E203700482EE0 /* ConfigurableRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurableRow.swift; sourceTree = "<group>"; };
@@ -68,7 +68,7 @@
 			isa = PBXGroup;
 			children = (
 				E71B4F11260E0E8B00482EE0 /* NSObject+ClassName.swift */,
-				E71B4F14260E188300482EE0 /* UIImage+PortraitImage.swift */,
+				E71B4F14260E188300482EE0 /* UIImage+ContactsImage.swift */,
 			);
 			path = Extention;
 			sourceTree = "<group>";
@@ -143,7 +143,7 @@
 		E7D5E0952611AB3F007E8864 /* ContactsViewController */ = {
 			isa = PBXGroup;
 			children = (
-				E71B4F0D260E0A3400482EE0 /* personTableViewDataSource.swift */,
+				E71B4F0D260E0A3400482EE0 /* ContactsTableViewDataSource.swift */,
 				E71B4EFA260E02B600482EE0 /* contactsViewController.swift */,
 				E7D5E0942611AA86007E8864 /* Cells */,
 			);
@@ -226,8 +226,8 @@
 				E71B4F24260E203700482EE0 /* ConfigurableRow.swift in Sources */,
 				E71B4EFB260E02B600482EE0 /* contactsViewController.swift in Sources */,
 				E74ADC592602383C00555080 /* AppDelegate.swift in Sources */,
-				E71B4F0E260E0A3400482EE0 /* personTableViewDataSource.swift in Sources */,
-				E71B4F15260E188300482EE0 /* UIImage+PortraitImage.swift in Sources */,
+				E71B4F0E260E0A3400482EE0 /* ContactsTableViewDataSource.swift in Sources */,
+				E71B4F15260E188300482EE0 /* UIImage+ContactsImage.swift in Sources */,
 				E71B4F04260E04EC00482EE0 /* PersonTableViewCell.swift in Sources */,
 				E71B4F1D260E1E3F00482EE0 /* AnimalTableViewCell.swift in Sources */,
 				E7C4EBB22604E542006033FA /* CustomButton.swift in Sources */,

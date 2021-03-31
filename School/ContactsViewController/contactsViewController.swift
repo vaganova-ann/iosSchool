@@ -28,30 +28,43 @@ class contactsViewController: UIViewController {
     
     @IBOutlet private var tableView: UITableView!
     
-    private var dataSourse: PersonTableViewDataSource!
+    private var dataSourse: ContactsTableViewDataSource!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let models = generateModels()
-        dataSourse = PersonTableViewDataSource(models: models)
+        let sections = generateModels()
+        dataSourse = ContactsTableViewDataSource(sections: sections)
         
         tableView.dataSource = dataSourse
         tableView.delegate = dataSourse
         
-        let personCellNib = UINib(nibName: PersonTableViewCell.className, bundle: nil)
-        // регестр ячейку под животных
-            tableView.register(personCellNib, forCellReuseIdentifier: PersonTableViewCell.className)
+        let personCellNib = UINib(nibName: PersonTableViewCell.className, bundle: Bundle.main)
+        let animalCellNib = UINib(nibName: AnimalTableViewCell.className, bundle: Bundle.main)
+        
+        tableView.register(personCellNib, forCellReuseIdentifier: PersonTableViewCell.className)
+        tableView.register(animalCellNib, forCellReuseIdentifier: AnimalTableViewCell.className)
     }
     
-    func generateModels() -> [Person] {
-        var models:[Person] = []
+    func generateModels() -> [Section] {
         
-        for index in 0..<names.count {
-            let person = Person(name: names[index], portrait: UIImage.portraitImageWithNumber(index))
-            models.append(person)
-        }
-        return models
+        var modelsPerson: [Person] = []
+        for (index, name) in PersonNames.enumerated() {
+            let person = Person(name: name, portrait: UIImage.portraitImageWithNumber(index))
+            modelsPerson.append(person)
+                }
+        
+        var modelsAnimal: [Animal] = []
+        for (index, name) in AnimalNames.enumerated() {
+            let animal = Animal(name: name, image: UIImage.animalImageWithNumber(index))
+            modelsAnimal.append(animal)
+                }
+        
+        var sections: [Section] = []
+        sections.append(Section(header: "These are people!", models: modelsPerson))
+        sections.append(Section(header: "These are animals!", models: modelsAnimal))
+        
+        return sections
     }
 }
 
