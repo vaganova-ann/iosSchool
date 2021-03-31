@@ -9,7 +9,7 @@ import UIKit
 
 protocol ConfigurableRow: UITableViewCell {
     
-    func configureWith(_ consigurator: Any) -> UITableViewCell
+    func configureWith(_ configurator: Any) -> UITableViewCell
 }
 
 protocol CellConfigurator: NSObject {
