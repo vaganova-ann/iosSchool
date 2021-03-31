@@ -24,7 +24,7 @@
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lWi-9r-Kas">
-                        <rect key="frame" x="132" y="55" width="41.5" height="20.5"/>
+                        <rect key="frame" x="132" y="55" width="390" height="20.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -33,6 +33,7 @@
                 <constraints>
                     <constraint firstAttribute="bottom" secondItem="lyg-TS-ceF" secondAttribute="bottom" constant="12" id="7Du-Wa-d3U"/>
                     <constraint firstItem="lyg-TS-ceF" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="12" id="ARg-l8-456"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="lWi-9r-Kas" secondAttribute="trailing" constant="16" id="f68-bj-ZCg"/>
                     <constraint firstItem="lWi-9r-Kas" firstAttribute="leading" secondItem="lyg-TS-ceF" secondAttribute="trailing" constant="16" id="nYb-uC-eLe"/>
                     <constraint firstItem="lyg-TS-ceF" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="ygQ-Qf-giX"/>
                 </constraints>

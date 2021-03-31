@@ -7,17 +7,17 @@
 
 import UIKit
 
-protocol ConfRow: UITableViewCell {
+protocol ConfigurableRow: UITableViewCell {
     
     func configureWith(_ consigurator: Any) -> UITableViewCell
 }
 
-protocol CellConf: NSObject {
-    var reuseId: String {get}
+protocol CellConfigurator: NSObject {
+    var reuseIndentifier: String {get}
 }
 
-extension CellConf {
-    var reuseId: String {
+extension CellConfigurator {
+    var reuseIndentifier: String {
         get{
             return Self.className
         }

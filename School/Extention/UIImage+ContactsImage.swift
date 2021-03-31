@@ -9,6 +9,10 @@ import UIKit
 
 extension UIImage {
     static func portraitImageWithNumber(_ number: Int) -> UIImage?{
-        return UIImage(named: "image-\(number)")
+        return UIImage(named: "portrait/image-\(number)")
+    }
+    
+    static func animalImageWithNumber(_ number: Int) -> UIImage?{
+        return UIImage(named: "animalImage/image-\(number)")
     }
 }
