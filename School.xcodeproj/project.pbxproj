@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -21,6 +21,9 @@
 		E74ADC602602383C00555080 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E74ADC5E2602383C00555080 /* Main.storyboard */; };
 		E74ADC622602383D00555080 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E74ADC612602383D00555080 /* Assets.xcassets */; };
 		E74ADC652602383D00555080 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E74ADC632602383D00555080 /* LaunchScreen.storyboard */; };
+		E78F1B212615F5980096F9F9 /* AuthorizationServerSimulator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E78F1B202615F5980096F9F9 /* AuthorizationServerSimulator.swift */; };
+		E78F1B262615FE420096F9F9 /* KeychainSwift in Frameworks */ = {isa = PBXBuildFile; productRef = E78F1B252615FE420096F9F9 /* KeychainSwift */; };
+		E78F1B2B261602740096F9F9 /* ApplicationConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E78F1B2A261602740096F9F9 /* ApplicationConstants.swift */; };
 		E7BB55C42614AAF600FC0015 /* ContactDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7BB55C22614AAF600FC0015 /* ContactDetailsViewController.swift */; };
 		E7BB55C82614AAFF00FC0015 /* PesikCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7BB55C62614AAFF00FC0015 /* PesikCell.swift */; };
 		E7BB55CD2614B4ED00FC0015 /* PesikCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7BB55C72614AAFF00FC0015 /* PesikCell.xib */; };
@@ -44,6 +47,8 @@
 		E74ADC612602383D00555080 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E74ADC642602383D00555080 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E74ADC662602383D00555080 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E78F1B202615F5980096F9F9 /* AuthorizationServerSimulator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthorizationServerSimulator.swift; sourceTree = "<group>"; };
+		E78F1B2A261602740096F9F9 /* ApplicationConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationConstants.swift; sourceTree = "<group>"; };
 		E7BB55C22614AAF600FC0015 /* ContactDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactDetailsViewController.swift; sourceTree = "<group>"; };
 		E7BB55C62614AAFF00FC0015 /* PesikCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PesikCell.swift; sourceTree = "<group>"; };
 		E7BB55C72614AAFF00FC0015 /* PesikCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PesikCell.xib; sourceTree = "<group>"; };
@@ -55,6 +60,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E78F1B262615FE420096F9F9 /* KeychainSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,6 +71,7 @@
 			isa = PBXGroup;
 			children = (
 				E74ADC582602383C00555080 /* AppDelegate.swift */,
+				E78F1B202615F5980096F9F9 /* AuthorizationServerSimulator.swift */,
 				E74ADC662602383D00555080 /* Info.plist */,
 			);
 			path = Service;
@@ -115,6 +122,7 @@
 		E74ADC572602383C00555080 /* School */ = {
 			isa = PBXGroup;
 			children = (
+				E78F1B28261602160096F9F9 /* Constans */,
 				E71B4F21260E201A00482EE0 /* Protocols */,
 				E71B4F08260E055200482EE0 /* Service */,
 				E71B4F10260E0E6200482EE0 /* Extention */,
@@ -126,6 +134,14 @@
 				E74ADC632602383D00555080 /* LaunchScreen.storyboard */,
 			);
 			path = School;
+			sourceTree = "<group>";
+		};
+		E78F1B28261602160096F9F9 /* Constans */ = {
+			isa = PBXGroup;
+			children = (
+				E78F1B2A261602740096F9F9 /* ApplicationConstants.swift */,
+			);
+			path = Constans;
 			sourceTree = "<group>";
 		};
 		E7BB55BE2614AAC600FC0015 /* Modules */ = {
@@ -199,6 +215,9 @@
 			dependencies = (
 			);
 			name = School;
+			packageProductDependencies = (
+				E78F1B252615FE420096F9F9 /* KeychainSwift */,
+			);
 			productName = School;
 			productReference = E74ADC552602383C00555080 /* School.app */;
 			productType = "com.apple.product-type.application";
@@ -226,6 +245,9 @@
 				Base,
 			);
 			mainGroup = E74ADC4C2602383C00555080;
+			packageReferences = (
+				E78F1B242615FE410096F9F9 /* XCRemoteSwiftPackageReference "keychain-swift" */,
+			);
 			productRefGroup = E74ADC562602383C00555080 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -256,6 +278,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E78F1B212615F5980096F9F9 /* AuthorizationServerSimulator.swift in Sources */,
 				E74ADC5D2602383C00555080 /* ViewController.swift in Sources */,
 				E71B4F24260E203700482EE0 /* ConfigurableRow.swift in Sources */,
 				E7BB55C82614AAFF00FC0015 /* PesikCell.swift in Sources */,
@@ -266,6 +289,7 @@
 				E71B4F04260E04EC00482EE0 /* PersonTableViewCell.swift in Sources */,
 				E7BB55C42614AAF600FC0015 /* ContactDetailsViewController.swift in Sources */,
 				E71B4F1D260E1E3F00482EE0 /* AnimalTableViewCell.swift in Sources */,
+				E78F1B2B261602740096F9F9 /* ApplicationConstants.swift in Sources */,
 				E7C4EBB22604E542006033FA /* CustomButton.swift in Sources */,
 				E71B4F12260E0E8B00482EE0 /* NSObject+ClassName.swift in Sources */,
 			);
@@ -467,6 +491,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		E78F1B242615FE410096F9F9 /* XCRemoteSwiftPackageReference "keychain-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/evgenyneu/keychain-swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 19.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		E78F1B252615FE420096F9F9 /* KeychainSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E78F1B242615FE410096F9F9 /* XCRemoteSwiftPackageReference "keychain-swift" */;
+			productName = KeychainSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = E74ADC4D2602383C00555080 /* Project object */;
 }

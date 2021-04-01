@@ -47,7 +47,6 @@ class ContactDetailsViewController: UIViewController {
     func navigateNext()  {
         
         
-        
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         
         let viewControllerToPush = storyboard.instantiateViewController(identifier: ContactDetailsViewController.className)

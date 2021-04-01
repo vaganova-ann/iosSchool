@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import KeychainSwift
 
 class ViewController: UIViewController, UIScrollViewDelegate {
     @IBOutlet weak private var titelLable: UILabel!
@@ -13,6 +14,8 @@ class ViewController: UIViewController, UIScrollViewDelegate {
     @IBOutlet weak private var loginTextField: UITextField!
     @IBOutlet weak private var passwordTextField: UITextField!
     @IBOutlet weak private var scrollView: UIScrollView!
+    
+    let keyChain = KeychainSwift()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,10 +51,31 @@ class ViewController: UIViewController, UIScrollViewDelegate {
     }
     
     @objc func tapAction(){
-        guard let text = loginTextField.text else
-        {return}
         
-        print("\(text) - текст с поля login")
+        
+//        guard let login = loginTextField.text,
+//              let password = passwordTextField.text
+//        else { return
+//        }
+//
+//        let loginAnswer = AuthorizationMockSimulator().logIn(login: login, password: password)
+//        if loginAnswer.result == true,
+//           let authorizationTocken = loginAnswer.token {
+//
+//            keyChain.set(authorizationTocken, forKey: ApplicationConstants.keychainTokenKey)
+//        }
+        
+        
+        
+        let mainStoryBoard = UIStoryboard(name: "Main", bundle: Bundle.main)
+        
+        let destinationViewController = mainStoryBoard.instantiateViewController(identifier: ContactsViewController.className)
+        
+        //present(destinationViewController, animated: true, completion: nil)
+        
+        navigationController?.pushViewController(destinationViewController, animated: true)
+        
+        //print("\(login) - текст с поля login")
     }
     
     
