@@ -87,12 +87,8 @@ class RegistrationViewController: UIViewController, UIScrollViewDelegate {
         let durationNumber = notification.userInfo?[UIResponder.keyboardAnimationDurationUserInfoKey] as? NSNumber
         print(durationNumber ?? 0)
         
-        //let centerOffsetX = (scrollView.contentSize.width - scrollView.frame.size.width) / 2
-        //let centerOffsetY =  -kbFrameSize.height / 2
-        //let centerPoint = CGPoint(x: centerOffsetX, y: centerOffsetY)
-        //scrollView.setContentOffset(centerPoint, animated: true)
-        
-        scrollView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: kbFrameSize.height, right: 0)
+        scrollView.contentInset = UIEdgeInsets(top: (scrollView.contentSize.height - kbFrameSize.height)/2, left: 0,
+                                               bottom: (scrollView.contentSize.height  + kbFrameSize.height)/2, right: 0)
         
     }
     
