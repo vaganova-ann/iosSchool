@@ -21,6 +21,12 @@
 		E74ADC602602383C00555080 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E74ADC5E2602383C00555080 /* Main.storyboard */; };
 		E74ADC622602383D00555080 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E74ADC612602383D00555080 /* Assets.xcassets */; };
 		E74ADC652602383D00555080 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E74ADC632602383D00555080 /* LaunchScreen.storyboard */; };
+		E754B39C261B39F0001152D4 /* PKHUD in Frameworks */ = {isa = PBXBuildFile; productRef = E754B39B261B39F0001152D4 /* PKHUD */; };
+		E754B39F261B3AB3001152D4 /* PlanetListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E754B39E261B3AB3001152D4 /* PlanetListViewController.swift */; };
+		E754B3A3261B3E70001152D4 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = E754B3A2261B3E70001152D4 /* Alamofire */; };
+		E754B3AA261B414C001152D4 /* PlanetListResponceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E754B3A9261B414C001152D4 /* PlanetListResponceModel.swift */; };
+		E754B3AD261B4499001152D4 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E754B3AC261B4499001152D4 /* NetworkService.swift */; };
+		E754B3B0261B451E001152D4 /* PlanetsListNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E754B3AF261B451E001152D4 /* PlanetsListNetworkService.swift */; };
 		E78F1B212615F5980096F9F9 /* AuthorizationServerSimulator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E78F1B202615F5980096F9F9 /* AuthorizationServerSimulator.swift */; };
 		E78F1B262615FE420096F9F9 /* KeychainSwift in Frameworks */ = {isa = PBXBuildFile; productRef = E78F1B252615FE420096F9F9 /* KeychainSwift */; };
 		E78F1B2B261602740096F9F9 /* ApplicationConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E78F1B2A261602740096F9F9 /* ApplicationConstants.swift */; };
@@ -48,6 +54,10 @@
 		E74ADC612602383D00555080 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E74ADC642602383D00555080 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E74ADC662602383D00555080 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E754B39E261B3AB3001152D4 /* PlanetListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetListViewController.swift; sourceTree = "<group>"; };
+		E754B3A9261B414C001152D4 /* PlanetListResponceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetListResponceModel.swift; sourceTree = "<group>"; };
+		E754B3AC261B4499001152D4 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		E754B3AF261B451E001152D4 /* PlanetsListNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetsListNetworkService.swift; sourceTree = "<group>"; };
 		E78F1B202615F5980096F9F9 /* AuthorizationServerSimulator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthorizationServerSimulator.swift; sourceTree = "<group>"; };
 		E78F1B2A261602740096F9F9 /* ApplicationConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationConstants.swift; sourceTree = "<group>"; };
 		E7B8D87D2618638700B5CC7C /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
@@ -62,7 +72,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E754B3A3261B3E70001152D4 /* Alamofire in Frameworks */,
 				E78F1B262615FE420096F9F9 /* KeychainSwift in Frameworks */,
+				E754B39C261B39F0001152D4 /* PKHUD in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -75,6 +87,7 @@
 				E74ADC582602383C00555080 /* AppDelegate.swift */,
 				E78F1B202615F5980096F9F9 /* AuthorizationServerSimulator.swift */,
 				E74ADC662602383D00555080 /* Info.plist */,
+				E754B3AC261B4499001152D4 /* NetworkService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -101,6 +114,7 @@
 			isa = PBXGroup;
 			children = (
 				E71B4F23260E203700482EE0 /* ConfigurableRow.swift */,
+				E754B3AF261B451E001152D4 /* PlanetsListNetworkService.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -124,6 +138,7 @@
 		E74ADC572602383C00555080 /* School */ = {
 			isa = PBXGroup;
 			children = (
+				E754B3A7261B4065001152D4 /* Models */,
 				E78F1B28261602160096F9F9 /* Constans */,
 				E71B4F21260E201A00482EE0 /* Protocols */,
 				E71B4F08260E055200482EE0 /* Service */,
@@ -135,8 +150,25 @@
 				E74ADC612602383D00555080 /* Assets.xcassets */,
 				E74ADC632602383D00555080 /* LaunchScreen.storyboard */,
 				E7B8D87D2618638700B5CC7C /* RegistrationViewController.swift */,
+				E754B39E261B3AB3001152D4 /* PlanetListViewController.swift */,
 			);
 			path = School;
+			sourceTree = "<group>";
+		};
+		E754B3A7261B4065001152D4 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				E754B3A8261B4071001152D4 /* DTO */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		E754B3A8261B4071001152D4 /* DTO */ = {
+			isa = PBXGroup;
+			children = (
+				E754B3A9261B414C001152D4 /* PlanetListResponceModel.swift */,
+			);
+			path = DTO;
 			sourceTree = "<group>";
 		};
 		E78F1B28261602160096F9F9 /* Constans */ = {
@@ -220,6 +252,8 @@
 			name = School;
 			packageProductDependencies = (
 				E78F1B252615FE420096F9F9 /* KeychainSwift */,
+				E754B39B261B39F0001152D4 /* PKHUD */,
+				E754B3A2261B3E70001152D4 /* Alamofire */,
 			);
 			productName = School;
 			productReference = E74ADC552602383C00555080 /* School.app */;
@@ -250,6 +284,8 @@
 			mainGroup = E74ADC4C2602383C00555080;
 			packageReferences = (
 				E78F1B242615FE410096F9F9 /* XCRemoteSwiftPackageReference "keychain-swift" */,
+				E754B39A261B39F0001152D4 /* XCRemoteSwiftPackageReference "PKHUD" */,
+				E754B3A1261B3E70001152D4 /* XCRemoteSwiftPackageReference "Alamofire" */,
 			);
 			productRefGroup = E74ADC562602383C00555080 /* Products */;
 			projectDirPath = "";
@@ -285,14 +321,18 @@
 				E74ADC5D2602383C00555080 /* ViewController.swift in Sources */,
 				E71B4F24260E203700482EE0 /* ConfigurableRow.swift in Sources */,
 				E7BB55C82614AAFF00FC0015 /* PesikCell.swift in Sources */,
+				E754B3AD261B4499001152D4 /* NetworkService.swift in Sources */,
 				E71B4EFB260E02B600482EE0 /* ContactsViewController.swift in Sources */,
 				E74ADC592602383C00555080 /* AppDelegate.swift in Sources */,
 				E71B4F0E260E0A3400482EE0 /* ContactsTableViewDataSource.swift in Sources */,
 				E71B4F15260E188300482EE0 /* UIImage+ContactsImage.swift in Sources */,
+				E754B39F261B3AB3001152D4 /* PlanetListViewController.swift in Sources */,
 				E71B4F04260E04EC00482EE0 /* PersonTableViewCell.swift in Sources */,
 				E7B8D87E2618638700B5CC7C /* RegistrationViewController.swift in Sources */,
 				E7BB55C42614AAF600FC0015 /* ContactDetailsViewController.swift in Sources */,
+				E754B3AA261B414C001152D4 /* PlanetListResponceModel.swift in Sources */,
 				E71B4F1D260E1E3F00482EE0 /* AnimalTableViewCell.swift in Sources */,
+				E754B3B0261B451E001152D4 /* PlanetsListNetworkService.swift in Sources */,
 				E78F1B2B261602740096F9F9 /* ApplicationConstants.swift in Sources */,
 				E7C4EBB22604E542006033FA /* CustomButton.swift in Sources */,
 				E71B4F12260E0E8B00482EE0 /* NSObject+ClassName.swift in Sources */,
@@ -497,6 +537,22 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		E754B39A261B39F0001152D4 /* XCRemoteSwiftPackageReference "PKHUD" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pkluz/PKHUD.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.4.0;
+			};
+		};
+		E754B3A1261B3E70001152D4 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.4.2;
+			};
+		};
 		E78F1B242615FE410096F9F9 /* XCRemoteSwiftPackageReference "keychain-swift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/evgenyneu/keychain-swift.git";
@@ -508,6 +564,16 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		E754B39B261B39F0001152D4 /* PKHUD */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E754B39A261B39F0001152D4 /* XCRemoteSwiftPackageReference "PKHUD" */;
+			productName = PKHUD;
+		};
+		E754B3A2261B3E70001152D4 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E754B3A1261B3E70001152D4 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
 		E78F1B252615FE420096F9F9 /* KeychainSwift */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = E78F1B242615FE410096F9F9 /* XCRemoteSwiftPackageReference "keychain-swift" */;
