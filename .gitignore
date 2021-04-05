@@ -83,3 +83,4 @@ DerivedData/
 
 # End of https://www.toptal.com/developers/gitignore/api/macos,xcode,cocoapods,carthage
 *.xcuserstate
+School.xcodeproj/project.xcworkspace/xcuserdata/student1.xcuserdatad/UserInterfaceState.xcuserstate

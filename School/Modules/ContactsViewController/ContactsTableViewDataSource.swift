@@ -2,7 +2,7 @@
 //  personTableViewDataSource.swift
 //  School
 //
-//  Created by Студент 2 on 26.03.2021.
+//  Created by Anna Vaganovaon 26.03.2021.
 //
 
 import UIKit

@@ -2,74 +2,45 @@
 //  RegistrationViewController.swift
 //  School
 //
-//  Created by Студент 4 on 4/3/21.
+//  Created by Anna Vaganova on 4/3/21.
 //
 
 import UIKit
 
-class RegistrationViewController: UIViewController, UIScrollViewDelegate {
-    
-    @IBOutlet weak private var loginTextField: UITextField!
-    @IBOutlet weak private var passwordTextField: UITextField!
-    @IBOutlet weak private var passwordAgainTextField: UITextField!
-    @IBOutlet weak private var doneButton: UIButton!
+class RegistrationViewController: UIViewController {
+
+    @IBOutlet var textFields: [UITextField]!
     @IBOutlet weak private var titleLabel: UILabel!
-    
     @IBOutlet weak private var scrollView: UIScrollView!
-    
-    var activeField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        doneButton.addTarget(self, action: #selector(tapDoneButtonAction), for: .touchUpInside)
-        
         let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
         view.addGestureRecognizer(gestureRecognizer)
         
-        loginTextField.returnKeyType = .next
-        passwordTextField.returnKeyType = .next
-        passwordAgainTextField.returnKeyType = .done
+        textFields[0].returnKeyType = .next
+        textFields[1].returnKeyType = .next
+        textFields[2].returnKeyType = .done
         
-        loginTextField.keyboardType = UIKeyboardType.emailAddress
+        textFields[0].keyboardType = UIKeyboardType.emailAddress
         
         registerKeyboardNotification()
         
         scrollView.delegate = self
-        
-        
-        
+        for elem in textFields {
+            elem.delegate = self
+        }
     }
     
     deinit {
         removeKeyboardNotifications()
     }
     
-    @objc func tapDoneButtonAction(){
-        
-        
-        
-    }
-    
     @objc func hideKeyboard(){
-        //view.resignFirstResponder() // если строка ниже не помогает
         view.endEditing(true)
     }
-    
 
-    @IBAction func loginTextFieldPrimaryActionTriggered(_ sender: UITextField) {
-        passwordTextField.becomeFirstResponder()
-    }
-    
-    @IBAction func passwordFieldPrimaryActionTriggered(_ sender: UITextField) {
-        passwordAgainTextField.becomeFirstResponder()
-    }
-    
-    @IBAction func passwordAgainTextFieldPrimaryActionTriggered(_ sender: UITextField) {
-        hideKeyboard()
-    }
-    
-    
     func registerKeyboardNotification(){
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
@@ -87,19 +58,31 @@ class RegistrationViewController: UIViewController, UIScrollViewDelegate {
         let durationNumber = notification.userInfo?[UIResponder.keyboardAnimationDurationUserInfoKey] as? NSNumber
         print(durationNumber ?? 0)
         
-        scrollView.contentInset = UIEdgeInsets(top: (scrollView.contentSize.height - kbFrameSize.height)/2, left: 0,
-                                               bottom: (scrollView.contentSize.height  + kbFrameSize.height)/2, right: 0)
+        scrollView.contentInset = UIEdgeInsets(top: (scrollView.contentSize.height - kbFrameSize.height) / 2.0, left: 0.0,
+                                               bottom: (scrollView.contentSize.height  + kbFrameSize.height) / 2.0, right: 0.0)
         
     }
     
-    @objc func keyboardWillHide(_ notification: Notification){
-        scrollView.contentInset = UIEdgeInsets.zero
+    @objc func keyboardWillHide(){
+        scrollView.contentInset = .zero
     }
+}
+
+extension RegistrationViewController: UITextFieldDelegate, UIScrollViewDelegate {
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let offset = scrollView.contentOffset.y
         let scale = min(max(1.0 - offset / 100.0, 0.0), 10.0)
         titleLabel.transform = CGAffineTransform(scaleX: 1.0, y: scale)
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if let currentIndex = textFields.firstIndex(of: textField), currentIndex < textFields.count - 1 {
+                textFields[currentIndex + 1].becomeFirstResponder() }
+        else {
+                textField.resignFirstResponder()
+            }
+        return true
     }
     
 }

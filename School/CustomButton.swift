@@ -2,7 +2,7 @@
 //  CustomButton.swift
 //  School
 //
-//  Created by Студент 2 on 19.03.2021.
+//  Created by Anna Vaganova on 19.03.2021.
 //
 
 import UIKit

@@ -253,9 +253,6 @@
                                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                                         <textInputTraits key="textInputTraits"/>
-                                                        <connections>
-                                                            <action selector="loginTextFieldPrimaryActionTriggered:" destination="C7q-EI-f7N" eventType="primaryActionTriggered" id="miV-ZV-58e"/>
-                                                        </connections>
                                                     </textField>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Введите пароль" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RpW-Ub-9y9">
                                                         <rect key="frame" x="0.0" y="102" width="382" height="70"/>
@@ -266,9 +263,6 @@
                                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                                         <textInputTraits key="textInputTraits"/>
-                                                        <connections>
-                                                            <action selector="passwordFieldPrimaryActionTriggered:" destination="C7q-EI-f7N" eventType="primaryActionTriggered" id="z6g-ua-XSP"/>
-                                                        </connections>
                                                     </textField>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Повторите пароль" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NLS-2a-aU1">
                                                         <rect key="frame" x="0.0" y="204" width="382" height="70"/>
@@ -279,9 +273,6 @@
                                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                                         <textInputTraits key="textInputTraits"/>
-                                                        <connections>
-                                                            <action selector="passwordAgainTextFieldPrimaryActionTriggered:" destination="C7q-EI-f7N" eventType="primaryActionTriggered" id="VX8-Zd-lA3"/>
-                                                        </connections>
                                                     </textField>
                                                 </subviews>
                                                 <constraints>
@@ -336,12 +327,11 @@
                     </view>
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
-                        <outlet property="doneButton" destination="5in-pE-aLB" id="FTW-Jm-MHn"/>
-                        <outlet property="loginTextField" destination="lIz-sy-lYM" id="NXC-dQ-xpd"/>
-                        <outlet property="passwordAgainTextField" destination="NLS-2a-aU1" id="JUS-JK-5nt"/>
-                        <outlet property="passwordTextField" destination="RpW-Ub-9y9" id="VeP-m4-T8R"/>
-                        <outlet property="scrollView" destination="sgb-F6-X8P" id="l0p-rn-80f"/>
+                        <outlet property="scrollView" destination="sgb-F6-X8P" id="dgm-oq-AEG"/>
                         <outlet property="titleLabel" destination="tZu-CO-gh5" id="CwS-kO-cbt"/>
+                        <outletCollection property="textFields" destination="lIz-sy-lYM" collectionClass="NSMutableArray" id="8Tg-r5-xAM"/>
+                        <outletCollection property="textFields" destination="RpW-Ub-9y9" collectionClass="NSMutableArray" id="S2b-vu-MTe"/>
+                        <outletCollection property="textFields" destination="NLS-2a-aU1" collectionClass="NSMutableArray" id="ksq-VC-6Yo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BLz-tk-KmO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
