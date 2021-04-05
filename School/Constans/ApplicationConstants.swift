@@ -9,3 +9,9 @@
 struct ApplicationConstants {
     static let keychainTokenKey = "keychainTokenKey"
 }
+
+struct NetworkConstants {
+    struct URLString {
+        static let planetList = "https://rickandmortyapi.com/api/location"
+    }
+}
