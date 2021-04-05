@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import KeychainSwift
 
 class ContactsViewController: UIViewController {
     
@@ -32,6 +33,10 @@ class ContactsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let token = keyChain.get(ApplicationConstants.keychainTokenKey)
+        
+        print(token ?? "where is token")
         
         let sections = generateModels()
         dataSourse = ContactsTableViewDataSource(sections: sections)
