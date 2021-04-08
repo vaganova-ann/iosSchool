@@ -12,12 +12,12 @@
         <tableViewCell opaque="NO" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="97" id="KGk-i7-Jjw" customClass="LoginCell" customModule="School" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="441" height="97"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
                 <rect key="frame" x="0.0" y="0.0" width="441" height="97"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Логин пользователя" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c4b-vP-hUU">
-                        <rect key="frame" x="33" y="0.0" width="375" height="40"/>
+                        <rect key="frame" x="33" y="16" width="375" height="40"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="40" id="kTu-JK-hKE"/>
                         </constraints>
@@ -28,8 +28,8 @@
                 </subviews>
                 <constraints>
                     <constraint firstItem="c4b-vP-hUU" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="Egc-FP-jPT"/>
-                    <constraint firstAttribute="bottom" secondItem="c4b-vP-hUU" secondAttribute="bottom" id="KPO-0R-goU"/>
-                    <constraint firstItem="c4b-vP-hUU" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="PXQ-q8-KtD"/>
+                    <constraint firstAttribute="bottom" secondItem="c4b-vP-hUU" secondAttribute="bottom" constant="40" id="KPO-0R-goU"/>
+                    <constraint firstItem="c4b-vP-hUU" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="16" id="PXQ-q8-KtD"/>
                     <constraint firstItem="c4b-vP-hUU" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="VUu-yn-i8q"/>
                     <constraint firstItem="c4b-vP-hUU" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="33" id="a4x-TR-Mc6"/>
                     <constraint firstAttribute="trailing" secondItem="c4b-vP-hUU" secondAttribute="trailing" constant="33" id="mds-bW-0Yy"/>

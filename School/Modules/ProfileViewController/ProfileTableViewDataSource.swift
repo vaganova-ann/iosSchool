@@ -32,7 +32,7 @@ class ProfileTableViewDataSource: NSObject {
 extension ProfileTableViewDataSource: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        3
+        4
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -43,14 +43,18 @@ extension ProfileTableViewDataSource: UITableViewDataSource {
         
         switch indexPath.row {
         case 0:
+            if let cell = tableView.dequeueReusableCell(withIdentifier: PhotosCell.className) as? PhotosCell {
+                return cell.createPhotosCell(userData: profile)
+            }
+        case 1:
             if let cell = tableView.dequeueReusableCell(withIdentifier: LoginCell.className) as? LoginCell {
                 return cell.createLoginCell(userData: profile)
             }
-        case 1:
-            if let cell = tableView.dequeueReusableCell(withIdentifier: "CustomDataCell" ) as? CustomDataCell {
+        case 2:
+            if let cell = tableView.dequeueReusableCell(withIdentifier: CustomDataCell.className) as? CustomDataCell {
                 return cell.createRegistrationDateCell(userData: profile)
             }
-        case 2:
+        case 3:
             if let cell = tableView.dequeueReusableCell(withIdentifier: CustomDataCell.className) as? CustomDataCell {
                 return cell.createColorCell(userData: profile)
             }
