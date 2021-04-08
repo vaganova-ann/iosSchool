@@ -14,7 +14,7 @@ class CustomDataCell: UITableViewCell {
     
     func createColorCell(userData: ProfileData) -> UITableViewCell {
         rightLabel.text = ""
-        leftLabel.text = "Цвет профиля"
+        leftLabel.text = "Цвет профиля:"
         
         if let userColor = userData.color {
             rightLabel.backgroundColor = UIColor(red: CGFloat(userColor.red), green: CGFloat(userColor.green), blue: CGFloat(userColor.blue), alpha: 0.5)
@@ -28,7 +28,7 @@ class CustomDataCell: UITableViewCell {
         dateFormatter.dateFormat = "dd/MM/YY"
         
         rightLabel.text = dateFormatter.string(from: userData.registrationDate)
-        leftLabel.text = "Дата Регистрации"
+        leftLabel.text = "Дата Регистрации:"
         
         return self
     }

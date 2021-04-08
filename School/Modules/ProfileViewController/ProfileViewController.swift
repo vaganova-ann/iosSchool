@@ -26,6 +26,12 @@ class ProfileViewController: UIViewController {
         
         let loginCellNib = UINib(nibName: LoginCell.className, bundle: Bundle.main)
         tableView.register(loginCellNib, forCellReuseIdentifier: LoginCell.className)
+        
+        let customDataCellNib = UINib(nibName: CustomDataCell.className, bundle: Bundle.main)
+        tableView.register(customDataCellNib, forCellReuseIdentifier: CustomDataCell.className)
+        
+        let photosCellNib = UINib(nibName: PhotosCell.className, bundle: Bundle.main)
+        tableView.register(photosCellNib, forCellReuseIdentifier: PhotosCell.className)
     }
     
     func generateModel() -> ProfileData {
