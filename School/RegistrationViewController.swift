@@ -44,7 +44,6 @@ class RegistrationViewController: UIViewController {
     func registerKeyboardNotification(){
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
-        
     }
     
     func removeKeyboardNotifications(){
@@ -60,7 +59,6 @@ class RegistrationViewController: UIViewController {
         
         scrollView.contentInset = UIEdgeInsets(top: (scrollView.contentSize.height - kbFrameSize.height) / 2.0, left: 0.0,
                                                bottom: (scrollView.contentSize.height  + kbFrameSize.height) / 2.0, right: 0.0)
-        
     }
     
     @objc func keyboardWillHide(){
@@ -78,21 +76,21 @@ extension RegistrationViewController: UITextFieldDelegate, UIScrollViewDelegate 
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         
+        if textField.returnKeyType == .done {
+            textField.resignFirstResponder()
+            return true
+        }
+        
         textFields = textFields.sorted{ $0.frame.origin.y < $1.frame.origin.y }
         
-        guard let currentIndex = textFields.firstIndex(of: textField)
-        else { return false }
-        
-        if textFields[currentIndex].returnKeyType == .next,
-           textFields.indices.contains(currentIndex + 1) {
-            
-            textFields[currentIndex + 1].becomeFirstResponder()
+        guard textField.returnKeyType == .next,
+              let currentIndex = textFields.firstIndex(of: textField),
+              textFields.indices.contains(currentIndex + 1)
+        else {
+            return false
         }
-        
-        if textFields[currentIndex].returnKeyType == .done {
-            textField.resignFirstResponder()
-        }
-        
+    
+        textFields[currentIndex + 1].becomeFirstResponder()
         return true
     }
 }
