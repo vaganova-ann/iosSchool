@@ -36,7 +36,6 @@ class ProfileViewController: UIViewController {
     
     func generateModel() -> ProfileData {
         
-        
         if let autorizationToken = keyChain.get(ApplicationConstants.keychainTokenKey),
            let responseData = AuthorizationMockSimulator().getProfile(token: autorizationToken)?.user
         {
