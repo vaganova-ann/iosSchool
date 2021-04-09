@@ -24,6 +24,7 @@
 		E78F1B212615F5980096F9F9 /* AuthorizationServerSimulator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E78F1B202615F5980096F9F9 /* AuthorizationServerSimulator.swift */; };
 		E78F1B262615FE420096F9F9 /* KeychainSwift in Frameworks */ = {isa = PBXBuildFile; productRef = E78F1B252615FE420096F9F9 /* KeychainSwift */; };
 		E78F1B2B261602740096F9F9 /* ApplicationConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E78F1B2A261602740096F9F9 /* ApplicationConstants.swift */; };
+		E7B8D87E2618638700B5CC7C /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B8D87D2618638700B5CC7C /* RegistrationViewController.swift */; };
 		E7BB55C42614AAF600FC0015 /* ContactDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7BB55C22614AAF600FC0015 /* ContactDetailsViewController.swift */; };
 		E7BB55C82614AAFF00FC0015 /* PesikCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7BB55C62614AAFF00FC0015 /* PesikCell.swift */; };
 		E7BB55CD2614B4ED00FC0015 /* PesikCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7BB55C72614AAFF00FC0015 /* PesikCell.xib */; };
@@ -49,6 +50,7 @@
 		E74ADC662602383D00555080 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E78F1B202615F5980096F9F9 /* AuthorizationServerSimulator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthorizationServerSimulator.swift; sourceTree = "<group>"; };
 		E78F1B2A261602740096F9F9 /* ApplicationConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationConstants.swift; sourceTree = "<group>"; };
+		E7B8D87D2618638700B5CC7C /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 		E7BB55C22614AAF600FC0015 /* ContactDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactDetailsViewController.swift; sourceTree = "<group>"; };
 		E7BB55C62614AAFF00FC0015 /* PesikCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PesikCell.swift; sourceTree = "<group>"; };
 		E7BB55C72614AAFF00FC0015 /* PesikCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PesikCell.xib; sourceTree = "<group>"; };
@@ -132,6 +134,7 @@
 				E74ADC5C2602383C00555080 /* ViewController.swift */,
 				E74ADC612602383D00555080 /* Assets.xcassets */,
 				E74ADC632602383D00555080 /* LaunchScreen.storyboard */,
+				E7B8D87D2618638700B5CC7C /* RegistrationViewController.swift */,
 			);
 			path = School;
 			sourceTree = "<group>";
@@ -287,6 +290,7 @@
 				E71B4F0E260E0A3400482EE0 /* ContactsTableViewDataSource.swift in Sources */,
 				E71B4F15260E188300482EE0 /* UIImage+ContactsImage.swift in Sources */,
 				E71B4F04260E04EC00482EE0 /* PersonTableViewCell.swift in Sources */,
+				E7B8D87E2618638700B5CC7C /* RegistrationViewController.swift in Sources */,
 				E7BB55C42614AAF600FC0015 /* ContactDetailsViewController.swift in Sources */,
 				E71B4F1D260E1E3F00482EE0 /* AnimalTableViewCell.swift in Sources */,
 				E78F1B2B261602740096F9F9 /* ApplicationConstants.swift in Sources */,

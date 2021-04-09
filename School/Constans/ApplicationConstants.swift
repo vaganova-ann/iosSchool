@@ -2,7 +2,7 @@
 //  ApplicationConstants.swift
 //  School
 //
-//  Created by Студент 2 on 01.04.2021.
+//  Created by Anna Vaganova on 01.04.2021.
 //
 
 

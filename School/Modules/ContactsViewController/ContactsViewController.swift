@@ -2,7 +2,7 @@
 //  ContactsViewController.swift
 //  School
 //
-//  Created by Студент 2 on 26.03.2021.
+//  Created by Anna Vaganova on 26.03.2021.
 //
 
 import UIKit

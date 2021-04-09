@@ -2,7 +2,7 @@
 //  AppDelegate.swift
 //  School
 //
-//  Created by Студент 2 on 17.03.2021.
+//  Created by Anna Vaganova on 17.03.2021.
 //
 
 import UIKit
