@@ -77,12 +77,22 @@ extension RegistrationViewController: UITextFieldDelegate, UIScrollViewDelegate 
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        if let currentIndex = textFields.firstIndex(of: textField), currentIndex < textFields.count - 1 {
-                textFields[currentIndex + 1].becomeFirstResponder() }
-        else {
-                textField.resignFirstResponder()
-            }
+        
+        textFields = textFields.sorted{ $0.frame.origin.y < $1.frame.origin.y }
+        
+        guard let currentIndex = textFields.firstIndex(of: textField)
+        else { return false }
+        
+        if textFields[currentIndex].returnKeyType == .next,
+           textFields.indices.contains(currentIndex + 1) {
+            
+            textFields[currentIndex + 1].becomeFirstResponder()
+        }
+        
+        if textFields[currentIndex].returnKeyType == .done {
+            textField.resignFirstResponder()
+        }
+        
         return true
     }
-    
 }
