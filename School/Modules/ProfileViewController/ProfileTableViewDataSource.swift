@@ -20,9 +20,14 @@ struct ProfileData {
     var registrationDate: Date
 }
 
+protocol PhotoSelectionProtocol: AnyObject {
+    func selectPhoto()
+}
+
 class ProfileTableViewDataSource: NSObject {
     
     private var profile: ProfileData
+    weak var photoSelector: PhotoSelectionProtocol?
     
     init(profile: ProfileData) {
         self.profile = profile
@@ -75,7 +80,7 @@ extension ProfileTableViewDataSource: UITableViewDelegate {
         tableView.deselectRow(at: indexPath, animated: false)
         
         if indexPath.row == 0 {
-            // https://www.ioscreator.com/tutorials/take-photo-ios-tutorial
+            photoSelector?.selectPhoto()
         }
         
     }

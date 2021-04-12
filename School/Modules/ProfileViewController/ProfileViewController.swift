@@ -20,6 +20,7 @@ class ProfileViewController: UIViewController {
         
         let model = generateModel()
         dataSource = ProfileTableViewDataSource(profile: model)
+        dataSource.photoSelector = self
         
         tableView.dataSource = dataSource
         tableView.delegate = dataSource
@@ -58,5 +59,11 @@ class ProfileViewController: UIViewController {
     @objc func logOutAction() {
         keyChain.delete(ApplicationConstants.keychainTokenKey)
         tabBarController?.navigationController?.popToRootViewController(animated: true)
+    }
+}
+
+extension ProfileViewController: PhotoSelectionProtocol {
+    func selectPhoto() {
+        
     }
 }
