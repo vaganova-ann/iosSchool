@@ -17,7 +17,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pnF-fW-f8K">
-                        <rect key="frame" x="16" y="0.0" width="35.5" height="58"/>
+                        <rect key="frame" x="16" y="5" width="35.5" height="58"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="58" id="uJH-hq-NNc"/>
@@ -27,7 +27,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ze5-Fq-s3g">
-                        <rect key="frame" x="535.5" y="0.0" width="35.5" height="58"/>
+                        <rect key="frame" x="535.5" y="5" width="35.5" height="58"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="58" id="dI0-8y-iIl"/>
                         </constraints>
@@ -38,13 +38,13 @@
                 </subviews>
                 <color key="backgroundColor" red="0.76862745098039209" green="0.76862745098039209" blue="0.76862745098039209" alpha="0.89803921568627454" colorSpace="calibratedRGB"/>
                 <constraints>
-                    <constraint firstAttribute="bottom" secondItem="Ze5-Fq-s3g" secondAttribute="bottom" id="DGI-Nn-iua"/>
-                    <constraint firstAttribute="bottom" secondItem="pnF-fW-f8K" secondAttribute="bottom" id="EVD-T9-ZGL"/>
+                    <constraint firstAttribute="bottom" secondItem="Ze5-Fq-s3g" secondAttribute="bottom" constant="5" id="DGI-Nn-iua"/>
+                    <constraint firstAttribute="bottom" secondItem="pnF-fW-f8K" secondAttribute="bottom" constant="5" id="EVD-T9-ZGL"/>
                     <constraint firstItem="pnF-fW-f8K" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="IjN-F4-a14"/>
-                    <constraint firstItem="pnF-fW-f8K" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="Qll-FP-XdG"/>
+                    <constraint firstItem="pnF-fW-f8K" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="Qll-FP-XdG"/>
                     <constraint firstItem="Ze5-Fq-s3g" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="pnF-fW-f8K" secondAttribute="trailing" id="ZYp-J8-UOg"/>
                     <constraint firstAttribute="trailing" secondItem="Ze5-Fq-s3g" secondAttribute="trailing" constant="16" id="jTV-Dq-gqS"/>
-                    <constraint firstItem="Ze5-Fq-s3g" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="otd-aY-SAM"/>
+                    <constraint firstItem="Ze5-Fq-s3g" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="otd-aY-SAM"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
@@ -54,7 +54,7 @@
                 <outlet property="leftLabel" destination="pnF-fW-f8K" id="cw4-sZ-MFR"/>
                 <outlet property="rightLabel" destination="Ze5-Fq-s3g" id="1tS-r6-woJ"/>
             </connections>
-            <point key="canvasLocation" x="225" y="-1"/>
+            <point key="canvasLocation" x="120" y="4"/>
         </tableViewCell>
     </objects>
 </document>

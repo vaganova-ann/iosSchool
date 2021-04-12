@@ -8,7 +8,6 @@
 import UIKit
 import KeychainSwift
 
-let keyChain = KeychainSwift()
 
 class RegistrationViewController: UIViewController {
 

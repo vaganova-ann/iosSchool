@@ -8,6 +8,8 @@
 import UIKit
 import KeychainSwift
 
+let keyChain = KeychainSwift()
+
 class ViewController: UIViewController, UIScrollViewDelegate {
     @IBOutlet weak private var titelLable: UILabel!
     @IBOutlet weak private var loginButton: UIButton!

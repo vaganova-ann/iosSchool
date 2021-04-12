@@ -64,22 +64,20 @@ extension ProfileTableViewDataSource: UITableViewDataSource {
         
         return UITableViewCell()
     }
-    
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: false)
-        
-        if indexPath.row == 0 {
-            
-        }
-        
-        
-    }
-    
 }
 
 extension ProfileTableViewDataSource: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         UITableView.automaticDimension
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: false)
+        
+        if indexPath.row == 0 {
+            // https://www.ioscreator.com/tutorials/take-photo-ios-tutorial
+        }
+        
+    }
 }
+

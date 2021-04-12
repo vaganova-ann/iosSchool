@@ -32,6 +32,8 @@ class ProfileViewController: UIViewController {
         
         let photosCellNib = UINib(nibName: PhotosCell.className, bundle: Bundle.main)
         tableView.register(photosCellNib, forCellReuseIdentifier: PhotosCell.className)
+        
+        logOutButton.addTarget(self, action: #selector(logOutAction), for: .touchUpInside)
     }
     
     func generateModel() -> ProfileData {
@@ -49,10 +51,12 @@ class ProfileViewController: UIViewController {
                 userProfileData.photo = responsePhoto
             }
             return userProfileData
-
         }
         return ProfileData(login: "Логин пользователя", registrationDate: Date())
         }
-        
-}
     
+    @objc func logOutAction() {
+        keyChain.delete(ApplicationConstants.keychainTokenKey)
+        tabBarController?.navigationController?.popToRootViewController(animated: true)
+    }
+}
