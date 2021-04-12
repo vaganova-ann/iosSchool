@@ -41,7 +41,7 @@ class PlanetListViewController: UIViewController {
             resultResponse = response
         }
         
-        return resultResponse
+        return resultResponse // тут надо чота сделать посмотри в чате в тг
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -61,8 +61,23 @@ class PlanetListViewController: UIViewController {
         HUD.deregisterFromKeyboardNotifications()
     }
     
-    func generateModel()   {
+    func generateModel(planetList : PlanetListResponceModel) -> [DataAboutPlanet]  {
         
+        var planets: [DataAboutPlanet] = []
+        
+        let informationAboutPlanet = planetList.results
+        
+        for planet in informationAboutPlanet {
+            
+            if let planetName = planet.name {
+                planets.append(DataAboutPlanet(name: planetName, type: planet.type, population: planet.residents.count))
+            }
+        }
+        return planets
+    }
+    
+    func loadingModel() {
+        // функция для подгрузки таблицы во время скролла
     }
     
 }
