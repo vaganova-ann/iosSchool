@@ -7,10 +7,10 @@
 
 import UIKit
 
-struct dataAboutPlanet {
+struct DataAboutPlanet {
     var name: String
-    var type: String
-    var population: Int
+    var type: String?
+    var population: Int?
 }
 
 class PlanetListCell: UITableViewCell {
@@ -19,13 +19,17 @@ class PlanetListCell: UITableViewCell {
     @IBOutlet private var planetTypeLabel: UILabel!
     @IBOutlet private var planetPopulationLabel: UILabel!
 
-    func createPlanetCell(information: dataAboutPlanet) -> UITableViewCell {
+    func createPlanetCell(information: DataAboutPlanet) -> UITableViewCell {
         
         planetNameLabel.text = information.name
         planetTypeLabel.text = information.type
-        planetPopulationLabel.text = String(information.population)
         
+        if let population = information.population {
+            planetPopulationLabel.text = String(population)
+        }
+        else {
+            planetPopulationLabel.text = nil
+        }
         return self
     }
-    
 }
