@@ -368,7 +368,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="tLn-sq-A7l" kind="relationship" relationship="rootViewController" id="Hmf-6s-dv5"/>
+                        <segue destination="AKI-lD-iVo" kind="relationship" relationship="rootViewController" id="Q9C-T0-QjX"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0EV-IP-xUS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -451,7 +451,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="b7K-Og-dHz">
-                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="bqD-9e-bH5">
                                     <size key="itemSize" width="128" height="128"/>
@@ -478,7 +478,38 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ucI-9Q-D2X" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1793" y="1714"/>
+            <point key="canvasLocation" x="3419" y="1724"/>
+        </scene>
+        <!--Planet List View Controller-->
+        <scene sceneID="Ao6-6S-Ml9">
+            <objects>
+                <viewController id="AKI-lD-iVo" customClass="PlanetListViewController" customModule="School" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="F10-Y7-Iju">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="eLS-oR-ZpT">
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="gfr-rA-M64"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="gfr-rA-M64" firstAttribute="bottom" secondItem="eLS-oR-ZpT" secondAttribute="bottom" id="NQ7-vd-Ah0"/>
+                            <constraint firstItem="eLS-oR-ZpT" firstAttribute="top" secondItem="gfr-rA-M64" secondAttribute="top" id="j7I-ik-igl"/>
+                            <constraint firstItem="eLS-oR-ZpT" firstAttribute="leading" secondItem="gfr-rA-M64" secondAttribute="leading" id="mou-bb-yLB"/>
+                            <constraint firstItem="gfr-rA-M64" firstAttribute="trailing" secondItem="eLS-oR-ZpT" secondAttribute="trailing" id="uqi-Ht-Uml"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="TLa-hS-JAY"/>
+                    <connections>
+                        <outlet property="tableView" destination="eLS-oR-ZpT" id="FG5-CP-VbZ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6Z7-hj-5dv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1812" y="1724"/>
         </scene>
     </scenes>
     <resources>
