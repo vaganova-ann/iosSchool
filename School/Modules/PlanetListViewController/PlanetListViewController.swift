@@ -12,17 +12,23 @@ let networkService: PlanetsListNetworkService = NetworkService()
 
 class PlanetListViewController: UIViewController {
     
+    @IBOutlet private var tableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         HUD.registerForKeyboardNotifications()
-        HUD.allowsInteraction = false
-        HUD.dimsBackground = true
+        //HUD.allowsInteraction = false
+        //HUD.dimsBackground = true
+        
     }
     
-    func loadPlanets() {
+    func loadPlanets(page: Int) -> PlanetListResponceModel {
         HUD.show(.progress)
-        networkService.getPlanetList(page: 1) { [weak self] (response, error) in
+        
+        var resultResponse: PlanetListResponceModel!
+        
+        networkService.getPlanetList(page: page) { [weak self] (response, error) in
             guard let self = self else { return }
             HUD.hide()
             //            self.textField.text = response?.info.next
@@ -31,7 +37,11 @@ class PlanetListViewController: UIViewController {
             print("--------ERROR---------------")
             print(error as Any)
             print("--------END---------------")
+            
+            resultResponse = response
         }
+        
+        return resultResponse
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -44,10 +54,15 @@ class PlanetListViewController: UIViewController {
         DispatchQueue.global().async {
             
         }
-        loadPlanets()
+        //loadPlanets()
     }
     
     deinit {
         HUD.deregisterFromKeyboardNotifications()
     }
+    
+    func generateModel()   {
+        
+    }
+    
 }
