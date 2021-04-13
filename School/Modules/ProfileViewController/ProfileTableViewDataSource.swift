@@ -15,7 +15,7 @@ struct CustomColor {
 
 struct ProfileData {
     var login: String
-    var photo: String?
+    var photo: UIImage?
     var color: CustomColor?
     var registrationDate: Date
 }
