@@ -60,7 +60,7 @@ class PlanetListViewController: UIViewController  {
         HUD.deregisterFromKeyboardNotifications()
     }
     
-    func generateModel(planetList : PlanetListResponceModel) -> [DataAboutPlanet]  {
+    func generateModel(planetList : PlanetListResponseModel) -> [DataAboutPlanet]  {
         
         var planets: [DataAboutPlanet] = []
         let informationAboutPlanet = planetList.results

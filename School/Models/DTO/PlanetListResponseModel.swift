@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct PlanetListResponceModel: Decodable {
+struct PlanetListResponseModel: Decodable {
     let info: PlanetListInfoResponceModel
     let results: [PlanetsListResultsResponceModel]
 }

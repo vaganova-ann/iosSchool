@@ -11,7 +11,7 @@ import Alamofire
 
 class NetworkService: PlanetsListNetworkService {
     
-    func getPlanetList(page: Int, onRequestCompleted: @escaping ((PlanetListResponceModel?, Error?) -> ())) {
+    func getPlanetList(page: Int, onRequestCompleted: @escaping ((PlanetListResponseModel?, Error?) -> ())) {
         performRequest(urlString: NetworkConstants.URLString.planetList+"?page=\(page)", onRequestCompleted: onRequestCompleted)
     }
     

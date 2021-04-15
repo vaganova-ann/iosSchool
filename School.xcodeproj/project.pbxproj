@@ -24,9 +24,14 @@
 		E754B39C261B39F0001152D4 /* PKHUD in Frameworks */ = {isa = PBXBuildFile; productRef = E754B39B261B39F0001152D4 /* PKHUD */; };
 		E754B39F261B3AB3001152D4 /* PlanetListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E754B39E261B3AB3001152D4 /* PlanetListViewController.swift */; };
 		E754B3A3261B3E70001152D4 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = E754B3A2261B3E70001152D4 /* Alamofire */; };
-		E754B3AA261B414C001152D4 /* PlanetListResponceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E754B3A9261B414C001152D4 /* PlanetListResponceModel.swift */; };
+		E754B3AA261B414C001152D4 /* PlanetListResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E754B3A9261B414C001152D4 /* PlanetListResponseModel.swift */; };
 		E754B3AD261B4499001152D4 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E754B3AC261B4499001152D4 /* NetworkService.swift */; };
 		E754B3B0261B451E001152D4 /* PlanetsListNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E754B3AF261B451E001152D4 /* PlanetsListNetworkService.swift */; };
+		E781E134262866CA003D7797 /* RxNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E781E133262866CA003D7797 /* RxNetworkService.swift */; };
+		E781E13826286716003D7797 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = E781E13726286716003D7797 /* RxSwift */; };
+		E781E13C26286716003D7797 /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = E781E13B26286716003D7797 /* RxRelay */; };
+		E781E13E26286716003D7797 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = E781E13D26286716003D7797 /* RxCocoa */; };
+		E781E14026286716003D7797 /* RxBlocking in Frameworks */ = {isa = PBXBuildFile; productRef = E781E13F26286716003D7797 /* RxBlocking */; };
 		E78F1B212615F5980096F9F9 /* AuthorizationServerSimulator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E78F1B202615F5980096F9F9 /* AuthorizationServerSimulator.swift */; };
 		E78F1B262615FE420096F9F9 /* KeychainSwift in Frameworks */ = {isa = PBXBuildFile; productRef = E78F1B252615FE420096F9F9 /* KeychainSwift */; };
 		E78F1B2B261602740096F9F9 /* ApplicationConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E78F1B2A261602740096F9F9 /* ApplicationConstants.swift */; };
@@ -65,9 +70,10 @@
 		E74ADC642602383D00555080 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E74ADC662602383D00555080 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E754B39E261B3AB3001152D4 /* PlanetListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetListViewController.swift; sourceTree = "<group>"; };
-		E754B3A9261B414C001152D4 /* PlanetListResponceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetListResponceModel.swift; sourceTree = "<group>"; };
+		E754B3A9261B414C001152D4 /* PlanetListResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetListResponseModel.swift; sourceTree = "<group>"; };
 		E754B3AC261B4499001152D4 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		E754B3AF261B451E001152D4 /* PlanetsListNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetsListNetworkService.swift; sourceTree = "<group>"; };
+		E781E133262866CA003D7797 /* RxNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxNetworkService.swift; sourceTree = "<group>"; };
 		E78F1B202615F5980096F9F9 /* AuthorizationServerSimulator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthorizationServerSimulator.swift; sourceTree = "<group>"; };
 		E78F1B2A261602740096F9F9 /* ApplicationConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationConstants.swift; sourceTree = "<group>"; };
 		E7B8D87D2618638700B5CC7C /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
@@ -92,8 +98,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E781E13C26286716003D7797 /* RxRelay in Frameworks */,
 				E754B3A3261B3E70001152D4 /* Alamofire in Frameworks */,
+				E781E13E26286716003D7797 /* RxCocoa in Frameworks */,
 				E78F1B262615FE420096F9F9 /* KeychainSwift in Frameworks */,
+				E781E14026286716003D7797 /* RxBlocking in Frameworks */,
+				E781E13826286716003D7797 /* RxSwift in Frameworks */,
 				E754B39C261B39F0001152D4 /* PKHUD in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -108,6 +118,7 @@
 				E78F1B202615F5980096F9F9 /* AuthorizationServerSimulator.swift */,
 				E74ADC662602383D00555080 /* Info.plist */,
 				E754B3AC261B4499001152D4 /* NetworkService.swift */,
+				E781E133262866CA003D7797 /* RxNetworkService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -185,7 +196,7 @@
 		E754B3A8261B4071001152D4 /* DTO */ = {
 			isa = PBXGroup;
 			children = (
-				E754B3A9261B414C001152D4 /* PlanetListResponceModel.swift */,
+				E754B3A9261B414C001152D4 /* PlanetListResponseModel.swift */,
 			);
 			path = DTO;
 			sourceTree = "<group>";
@@ -340,6 +351,10 @@
 				E78F1B252615FE420096F9F9 /* KeychainSwift */,
 				E754B39B261B39F0001152D4 /* PKHUD */,
 				E754B3A2261B3E70001152D4 /* Alamofire */,
+				E781E13726286716003D7797 /* RxSwift */,
+				E781E13B26286716003D7797 /* RxRelay */,
+				E781E13D26286716003D7797 /* RxCocoa */,
+				E781E13F26286716003D7797 /* RxBlocking */,
 			);
 			productName = School;
 			productReference = E74ADC552602383C00555080 /* School.app */;
@@ -372,6 +387,7 @@
 				E78F1B242615FE410096F9F9 /* XCRemoteSwiftPackageReference "keychain-swift" */,
 				E754B39A261B39F0001152D4 /* XCRemoteSwiftPackageReference "PKHUD" */,
 				E754B3A1261B3E70001152D4 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				E781E13626286716003D7797 /* XCRemoteSwiftPackageReference "RxSwift" */,
 			);
 			productRefGroup = E74ADC562602383C00555080 /* Products */;
 			projectDirPath = "";
@@ -419,6 +435,7 @@
 				E7B8D888261C776000B5CC7C /* ProfileTableViewDataSource.swift in Sources */,
 				E71B4EFB260E02B600482EE0 /* ContactsViewController.swift in Sources */,
 				E74ADC592602383C00555080 /* AppDelegate.swift in Sources */,
+				E781E134262866CA003D7797 /* RxNetworkService.swift in Sources */,
 				E71B4F0E260E0A3400482EE0 /* ContactsTableViewDataSource.swift in Sources */,
 				E71B4F15260E188300482EE0 /* UIImage+ContactsImage.swift in Sources */,
 				E754B39F261B3AB3001152D4 /* PlanetListViewController.swift in Sources */,
@@ -426,7 +443,7 @@
 				E7B8D8AA26242C6700B5CC7C /* PlanetListCell.swift in Sources */,
 				E7B8D87E2618638700B5CC7C /* RegistrationViewController.swift in Sources */,
 				E7BB55C42614AAF600FC0015 /* ContactDetailsViewController.swift in Sources */,
-				E754B3AA261B414C001152D4 /* PlanetListResponceModel.swift in Sources */,
+				E754B3AA261B414C001152D4 /* PlanetListResponseModel.swift in Sources */,
 				E71B4F1D260E1E3F00482EE0 /* AnimalTableViewCell.swift in Sources */,
 				E754B3B0261B451E001152D4 /* PlanetsListNetworkService.swift in Sources */,
 				E78F1B2B261602740096F9F9 /* ApplicationConstants.swift in Sources */,
@@ -494,6 +511,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENABLE_TESTING_SEARCH_PATHS = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -555,6 +573,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTING_SEARCH_PATHS = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -649,6 +668,14 @@
 				minimumVersion = 5.4.2;
 			};
 		};
+		E781E13626286716003D7797 /* XCRemoteSwiftPackageReference "RxSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReactiveX/RxSwift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.1.0;
+			};
+		};
 		E78F1B242615FE410096F9F9 /* XCRemoteSwiftPackageReference "keychain-swift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/evgenyneu/keychain-swift.git";
@@ -669,6 +696,26 @@
 			isa = XCSwiftPackageProductDependency;
 			package = E754B3A1261B3E70001152D4 /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
+		};
+		E781E13726286716003D7797 /* RxSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E781E13626286716003D7797 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxSwift;
+		};
+		E781E13B26286716003D7797 /* RxRelay */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E781E13626286716003D7797 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxRelay;
+		};
+		E781E13D26286716003D7797 /* RxCocoa */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E781E13626286716003D7797 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxCocoa;
+		};
+		E781E13F26286716003D7797 /* RxBlocking */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E781E13626286716003D7797 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxBlocking;
 		};
 		E78F1B252615FE420096F9F9 /* KeychainSwift */ = {
 			isa = XCSwiftPackageProductDependency;
