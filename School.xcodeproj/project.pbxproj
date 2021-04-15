@@ -45,7 +45,6 @@
 		E7BB55C82614AAFF00FC0015 /* PesikCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7BB55C62614AAFF00FC0015 /* PesikCell.swift */; };
 		E7BB55CD2614B4ED00FC0015 /* PesikCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7BB55C72614AAFF00FC0015 /* PesikCell.xib */; };
 		E7C4EBB22604E542006033FA /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C4EBB12604E542006033FA /* CustomButton.swift */; };
-		E7F75134262482BB00E2C544 /* PlanetListTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F75133262482BB00E2C544 /* PlanetListTableViewDataSource.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -86,7 +85,6 @@
 		E7BB55C62614AAFF00FC0015 /* PesikCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PesikCell.swift; sourceTree = "<group>"; };
 		E7BB55C72614AAFF00FC0015 /* PesikCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PesikCell.xib; sourceTree = "<group>"; };
 		E7C4EBB12604E542006033FA /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
-		E7F75133262482BB00E2C544 /* PlanetListTableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetListTableViewDataSource.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -252,7 +250,6 @@
 			children = (
 				E7B8D8A726242C3700B5CC7C /* Cells */,
 				E754B39E261B3AB3001152D4 /* PlanetListViewController.swift */,
-				E7F75133262482BB00E2C544 /* PlanetListTableViewDataSource.swift */,
 			);
 			path = PlanetListViewController;
 			sourceTree = "<group>";
@@ -428,7 +425,6 @@
 				E71B4F04260E04EC00482EE0 /* PersonTableViewCell.swift in Sources */,
 				E7B8D8AA26242C6700B5CC7C /* PlanetListCell.swift in Sources */,
 				E7B8D87E2618638700B5CC7C /* RegistrationViewController.swift in Sources */,
-				E7F75134262482BB00E2C544 /* PlanetListTableViewDataSource.swift in Sources */,
 				E7BB55C42614AAF600FC0015 /* ContactDetailsViewController.swift in Sources */,
 				E754B3AA261B414C001152D4 /* PlanetListResponseModel.swift in Sources */,
 				E71B4F1D260E1E3F00482EE0 /* AnimalTableViewCell.swift in Sources */,
