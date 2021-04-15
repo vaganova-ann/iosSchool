@@ -12,7 +12,7 @@ import Alamofire
 class NetworkService: PlanetsListNetworkService {
     
     func getPlanetList(page: Int, onRequestCompleted: @escaping ((PlanetListResponceModel?, Error?) -> ())) {
-        performRequest(urlString: NetworkConstants.URLString.planetList+"?page\(page)", onRequestCompleted: onRequestCompleted)
+        performRequest(urlString: NetworkConstants.URLString.planetList+"?page=\(page)", onRequestCompleted: onRequestCompleted)
     }
     
     private func performRequest <ResponseModel: Decodable> (urlString: String, method: HTTPMethod = .get, onRequestCompleted: @escaping ((ResponseModel?, Error?)->())) {
