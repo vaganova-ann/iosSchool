@@ -8,8 +8,6 @@
 import UIKit
 import KeychainSwift
 
-//let keyChain = KeychainSwift()
-
 class RegistrationViewController: UIViewController {
 
     @IBOutlet var textFields: [UITextField]!
@@ -55,8 +53,7 @@ class RegistrationViewController: UIViewController {
             valueFromTextFields.append(text)
         }
         
-        guard  valueFromTextFields.indices.contains(1),
-               valueFromTextFields.indices.contains(2)
+        guard  valueFromTextFields.indices.contains(2)
         else { return }
         
         if valueFromTextFields[1] == valueFromTextFields[2] {
