@@ -8,7 +8,7 @@
 import UIKit
 import KeychainSwift
 
-let keyChain = KeychainSwift()
+//let keyChain = KeychainSwift()
 
 class RegistrationViewController: UIViewController {
 
@@ -17,8 +17,7 @@ class RegistrationViewController: UIViewController {
     @IBOutlet weak private var scrollView: UIScrollView!
     @IBOutlet weak private var registrationButton: UIButton!
     
-    
-    let mainStoryBoard = UIStoryboard(name: "Main", bundle: Bundle.main)
+    let keyChain = KeychainSwift()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,11 +49,15 @@ class RegistrationViewController: UIViewController {
     
         var valueFromTextFields: [String] = []
         for field in textFields {
-            guard let text = field.text else {
-                return
-            }
+            guard let text = field.text,
+                  !text.isEmpty
+            else { return }
             valueFromTextFields.append(text)
         }
+        
+        guard  valueFromTextFields.indices.contains(1),
+               valueFromTextFields.indices.contains(2)
+        else { return }
         
         if valueFromTextFields[1] == valueFromTextFields[2] {
             
@@ -64,6 +67,7 @@ class RegistrationViewController: UIViewController {
                     keyChain.set(registrationToken, forKey: ApplicationConstants.keychainTokenKey)
                 }
             
+            let mainStoryBoard = UIStoryboard(name: "Main", bundle: Bundle.main)
             let destinationViewController = mainStoryBoard.instantiateViewController(identifier: String("TabBarController"))
             navigationController?.pushViewController(destinationViewController, animated: true)
         }

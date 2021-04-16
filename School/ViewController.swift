@@ -15,9 +15,7 @@ class ViewController: UIViewController, UIScrollViewDelegate {
     @IBOutlet weak private var passwordTextField: UITextField!
     @IBOutlet weak private var scrollView: UIScrollView!
     
-    //let keyChain = KeychainSwift()
-    let mainStoryBoard = UIStoryboard(name: "Main", bundle: Bundle.main)
-    
+    let keyChain = KeychainSwift()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,29 +45,32 @@ class ViewController: UIViewController, UIScrollViewDelegate {
     @objc func tapAction(){
         
         guard let login = loginTextField.text,
-              let password = passwordTextField.text
+              let password = passwordTextField.text,
+              !login.isEmpty,
+              !password.isEmpty
         else { return }
 
         let loginAnswer = AuthorizationMockSimulator().logIn(login: login, password: password)
         if loginAnswer.result == true,
            let authorizationTocken = loginAnswer.token {
             keyChain.set(authorizationTocken, forKey: ApplicationConstants.keychainTokenKey)
+            jumpToNextViewController(nameViewController: "TabBarController")
         }
-        let destinationViewController = mainStoryBoard.instantiateViewController(identifier: String("TabBarController"))
-        navigationController?.pushViewController(destinationViewController, animated: true)
     }
     
-    
     @IBAction func tapRegisterButttonAction() {
-        
-        let destinationViewController = mainStoryBoard.instantiateViewController(identifier: RegistrationViewController.className)
+        jumpToNextViewController(nameViewController: RegistrationViewController.className)
+    }
+    
+    func jumpToNextViewController(nameViewController: String) {
+        let mainStoryBoard = UIStoryboard(name: "Main", bundle: Bundle.main)
+        let destinationViewController = mainStoryBoard.instantiateViewController(identifier: nameViewController)
         navigationController?.pushViewController(destinationViewController, animated: true)
     }
     
     @IBAction func loginTextFieldPrimaryActionTriggered(_ sender: UITextField) {
         passwordTextField.becomeFirstResponder()
     }
-    
     
     @IBAction func passwordTextFieldPrimaryActionTriggered(_ sender: UITextField) {
         hideKeyboard()
@@ -99,8 +100,5 @@ class ViewController: UIViewController, UIScrollViewDelegate {
         let scale = min(max(1.0 - offset / 100.0, 0.0), 10.0)
         titelLable.transform = CGAffineTransform(scaleX: 1.0, y: scale)
     }
-    
-    
-    
 }
 

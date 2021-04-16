@@ -26,17 +26,12 @@ class ContactsViewController: UIViewController {
     
     private var AnimalNames: [String] = ["Cat", "Dog", "Cow", "Rabbit", "Lion"]
     
-    
     @IBOutlet private var tableView: UITableView!
     
     private var dataSourse: ContactsTableViewDataSource!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        let token = keyChain.get(ApplicationConstants.keychainTokenKey)
-        
-        print(token ?? "where is token")
         
         let sections = generateModels()
         dataSourse = ContactsTableViewDataSource(sections: sections)
