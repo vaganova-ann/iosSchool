@@ -16,6 +16,8 @@ class ProfileViewController: UIViewController {
     private var dataSource: ProfileTableViewDataSource!
     private var model: ProfileData!
     
+    let keyChain = KeychainSwift()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
