@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import KeychainSwift
 
 class ContactsViewController: UIViewController {
     
@@ -24,7 +25,6 @@ class ContactsViewController: UIViewController {
          "Fritz Keller"]
     
     private var AnimalNames: [String] = ["Cat", "Dog", "Cow", "Rabbit", "Lion"]
-    
     
     @IBOutlet private var tableView: UITableView!
     

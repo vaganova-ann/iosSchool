@@ -6,12 +6,16 @@
 //
 
 import UIKit
+import KeychainSwift
 
 class RegistrationViewController: UIViewController {
 
     @IBOutlet var textFields: [UITextField]!
     @IBOutlet weak private var titleLabel: UILabel!
     @IBOutlet weak private var scrollView: UIScrollView!
+    @IBOutlet weak private var registrationButton: UIButton!
+    
+    let keyChain = KeychainSwift()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,10 +35,39 @@ class RegistrationViewController: UIViewController {
         for elem in textFields {
             elem.delegate = self
         }
+        
+        registrationButton.addTarget(self, action: #selector(registrationAction), for: .touchUpInside)
     }
     
     deinit {
         removeKeyboardNotifications()
+    }
+    
+    @objc func registrationAction(){
+    
+        var valueFromTextFields: [String] = []
+        for field in textFields {
+            guard let text = field.text,
+                  !text.isEmpty
+            else { return }
+            valueFromTextFields.append(text)
+        }
+        
+        guard  valueFromTextFields.indices.contains(2)
+        else { return }
+        
+        if valueFromTextFields[1] == valueFromTextFields[2] {
+            
+            let registrationAnswer = AuthorizationMockSimulator().registerUser(login: valueFromTextFields[0], password: valueFromTextFields[1])
+            if registrationAnswer.result == true,
+                let registrationToken = registrationAnswer.token {
+                    keyChain.set(registrationToken, forKey: ApplicationConstants.keychainTokenKey)
+                }
+            
+            let mainStoryBoard = UIStoryboard(name: "Main", bundle: Bundle.main)
+            let destinationViewController = mainStoryBoard.instantiateViewController(identifier: String("TabBarController"))
+            navigationController?.pushViewController(destinationViewController, animated: true)
+        }
     }
     
     @objc func hideKeyboard(){

@@ -14,12 +14,13 @@ private struct AuthorizationMockSimulatorConstants {
     struct Error {
         static let noUser = "Пользователь не найден"
         static let wrongPassword = "Неверный пароль"
+        static let changeLogin = "Имя пользователя недоступно"
     }
 }
 
 protocol Authorization {
     
-    func registerUser(login: String, password: String) -> String
+    func registerUser(login: String, password: String) -> AuthorizationMockSimulator.LogInAnswer
     func logIn(login: String, password: String) -> AuthorizationMockSimulator.LogInAnswer
     func getProfile(token: String) -> AuthorizationMockSimulator.ProfileAnswer?
     @discardableResult
@@ -52,13 +53,13 @@ class AuthorizationMockSimulator: Authorization {
         let error: String?
     }
     
-    struct ApplicationUserPrefferedColor: Equatable {
+    struct ApplicationUserPrefferedColor: Equatable, Codable {
         let green: Double
         let red: Double
         let blue: Double
     }
     
-    struct ApplicationUser: Equatable {
+    struct ApplicationUser: Equatable, Codable {
         let token: String
         let registrationDate: Date
         var login: String
@@ -67,12 +68,22 @@ class AuthorizationMockSimulator: Authorization {
         var prefferedColor: ApplicationUserPrefferedColor?
     }
     
-    func registerUser(login: String, password: String) -> String {
+    func registerUser(login: String, password: String) -> LogInAnswer {
         
-        var localSavedUsersArray = UserDefaults.standard.array(forKey: AuthorizationMockSimulatorConstants.usersArrayKey) as? [ApplicationUser]
+        var localSavedUsersArray = usersArray()
         if localSavedUsersArray == nil {
             localSavedUsersArray = []
         }
+        
+        if localSavedUsersArray?.first(where: { (savedUser) -> Bool in
+            return savedUser.login.uppercased() == login.uppercased()
+        }) != nil {
+            
+            return LogInAnswer(result: false,
+                               token: nil,
+                               error: AuthorizationMockSimulatorConstants.Error.changeLogin)
+        }
+        
         let token = UUID().uuidString
         let user = ApplicationUser(token: token,
                                    registrationDate: Date(),
@@ -81,7 +92,11 @@ class AuthorizationMockSimulator: Authorization {
                                    photo: nil,
                                    prefferedColor: nil)
         localSavedUsersArray?.append(user)
-        return token
+        save(localSavedUsersArray ?? [])
+        
+        return LogInAnswer.init(result: true,
+                                token: token,
+                                error: nil)
     }
     
     func logIn(login: String, password: String) -> LogInAnswer {
@@ -89,7 +104,7 @@ class AuthorizationMockSimulator: Authorization {
         guard let localSavedUsersArray = usersArray(),
               let user = localSavedUsersArray.first(where: { (savedUser) -> Bool in
             
-            return savedUser.login == login
+                return savedUser.login.uppercased() == login.uppercased()
         })
         else {
             return LogInAnswer(result: false,
@@ -177,10 +192,28 @@ class AuthorizationMockSimulator: Authorization {
     
     private func usersArray() -> [ApplicationUser]? {
         
-        return UserDefaults.standard.array(forKey: AuthorizationMockSimulatorConstants.usersArrayKey) as? [ApplicationUser]
+        guard let data = UserDefaults.standard.data(forKey: AuthorizationMockSimulatorConstants.usersArrayKey)
+        else {
+            return nil
+        }
+        let decoder = JSONDecoder()
+        do {
+            let decodedArray = try decoder.decode([ApplicationUser].self, from: data)
+            return decodedArray
+        } catch {
+            print("\(Self.self) can not decode dataObjects")
+        }
+        return nil
     }
     
     private func save(_ array: [ApplicationUser]) {
-        UserDefaults.standard.setValue(array, forKey: AuthorizationMockSimulatorConstants.usersArrayKey)
+        
+        let encoder = JSONEncoder()
+        do {
+            let encodedArray = try encoder.encode(array)
+            UserDefaults.standard.set(encodedArray, forKey: AuthorizationMockSimulatorConstants.usersArrayKey)
+        } catch {
+            print("\(Self.self) can not save dataObjects")
+        }
     }
 }

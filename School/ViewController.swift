@@ -21,18 +21,12 @@ class ViewController: UIViewController, UIScrollViewDelegate {
         super.viewDidLoad()
         loginButton.addTarget(self, action: #selector(tapAction), for: .touchUpInside)
         
-        //loginButton.setTitle("код не войти", for: .disabled)
-        //loginButton.isEnabled = false
-        
         let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
         view.addGestureRecognizer(gestureRecognizer)
         
-        // тип return при работе с loginTextField
         loginTextField.returnKeyType = .next
-        // тип return при работе с passwordTextField
         passwordTextField.returnKeyType = .done
         
-        // тип клавиатуры при работе с loginTextField
         loginTextField.keyboardType = UIKeyboardType.emailAddress
         
         registerKeyboardNotification()
@@ -44,64 +38,47 @@ class ViewController: UIViewController, UIScrollViewDelegate {
         removeKeyboardNotifications()
     }
     
-    // функция для сворачивания клавиатуры
     @objc func hideKeyboard(){
-        //view.resignFirstResponder() // если строка ниже не помогает
         view.endEditing(true)
     }
     
     @objc func tapAction(){
         
-        
-//        guard let login = loginTextField.text,
-//              let password = passwordTextField.text
-//        else { return
-//        }
-//
-//        let loginAnswer = AuthorizationMockSimulator().logIn(login: login, password: password)
-//        if loginAnswer.result == true,
-//           let authorizationTocken = loginAnswer.token {
-//
-//            keyChain.set(authorizationTocken, forKey: ApplicationConstants.keychainTokenKey)
-//        }
-        
-        
-        
-        let mainStoryBoard = UIStoryboard(name: "Main", bundle: Bundle.main)
-        
-        let destinationViewController = mainStoryBoard.instantiateViewController(identifier: ContactsViewController.className)
-        
-        //present(destinationViewController, animated: true, completion: nil)
-        
-        navigationController?.pushViewController(destinationViewController, animated: true)
-        
-        //print("\(login) - текст с поля login")
+        guard let login = loginTextField.text,
+              let password = passwordTextField.text,
+              !login.isEmpty,
+              !password.isEmpty
+        else { return }
+
+        let loginAnswer = AuthorizationMockSimulator().logIn(login: login, password: password)
+        if loginAnswer.result == true,
+           let authorizationTocken = loginAnswer.token {
+            keyChain.set(authorizationTocken, forKey: ApplicationConstants.keychainTokenKey)
+            jumpToNextViewController(nameViewController: "TabBarController")
+        }
     }
     
-    
     @IBAction func tapRegisterButttonAction() {
-        if let text = passwordTextField.text {
-            print("\(text) - текст с поля password")
-        }
-        
-        
+        jumpToNextViewController(nameViewController: RegistrationViewController.className)
+    }
+    
+    func jumpToNextViewController(nameViewController: String) {
+        let mainStoryBoard = UIStoryboard(name: "Main", bundle: Bundle.main)
+        let destinationViewController = mainStoryBoard.instantiateViewController(identifier: nameViewController)
+        navigationController?.pushViewController(destinationViewController, animated: true)
     }
     
     @IBAction func loginTextFieldPrimaryActionTriggered(_ sender: UITextField) {
         passwordTextField.becomeFirstResponder()
     }
     
-    
     @IBAction func passwordTextFieldPrimaryActionTriggered(_ sender: UITextField) {
         hideKeyboard()
     }
     
-    
     func registerKeyboardNotification(){
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
-        
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
-        
     }
     
     func removeKeyboardNotifications(){
@@ -114,8 +91,8 @@ class ViewController: UIViewController, UIScrollViewDelegate {
         scrollView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: kbFrameSize.height, right: 0)
     }
     
-    @objc func keyboardWillHide(_ notification: Notification){
-        scrollView.contentInset = UIEdgeInsets.zero
+    @objc func keyboardWillHide(){
+        scrollView.contentInset = .zero
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
@@ -123,8 +100,5 @@ class ViewController: UIViewController, UIScrollViewDelegate {
         let scale = min(max(1.0 - offset / 100.0, 0.0), 10.0)
         titelLable.transform = CGAffineTransform(scaleX: 1.0, y: scale)
     }
-    
-    
-    
 }
 
