@@ -12,7 +12,7 @@ class LoginCell: UITableViewCell {
     @IBOutlet private var loginLabel: UILabel!
     
     func createLoginCell(userData: ProfileData) -> UITableViewCell {
-        LoginLabel.text = userData.login
+        loginLabel.text = userData.login
         return self
     }
     
