@@ -41,8 +41,8 @@ extension ProfileTableViewDataSource: UITableViewDataSource {
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-            1
-        }
+        1
+    }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
@@ -82,7 +82,6 @@ extension ProfileTableViewDataSource: UITableViewDelegate {
         if indexPath.row == 0 {
             photoSelector?.selectPhoto()
         }
-        
     }
 }
 

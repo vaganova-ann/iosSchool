@@ -2,7 +2,7 @@
 //  PlanetListViewController.swift
 //  School
 //
-//  Created by Студент 2 on 05.04.2021.
+//  Created by Anna Vaganova on 05.04.2021.
 //
 
 import UIKit
@@ -18,8 +18,6 @@ class PlanetListViewController: UIViewController {
         HUD.registerForKeyboardNotifications()
         HUD.allowsInteraction = false
         HUD.dimsBackground = true
-        
-        
     }
     
     func loadPlanets() {
@@ -33,7 +31,6 @@ class PlanetListViewController: UIViewController {
             print("--------ERROR---------------")
             print(error as Any)
             print("--------END---------------")
-            
         }
     }
     
@@ -50,10 +47,7 @@ class PlanetListViewController: UIViewController {
         loadPlanets()
     }
     
-    
-    
     deinit {
         HUD.deregisterFromKeyboardNotifications()
     }
-    
 }

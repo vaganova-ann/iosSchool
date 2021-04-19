@@ -19,6 +19,9 @@ class CustomDataCell: UITableViewCell {
         if let userColor = userData.color {
             rightLabel.backgroundColor = UIColor(red: CGFloat(userColor.red), green: CGFloat(userColor.green), blue: CGFloat(userColor.blue), alpha: 0.5)
         }
+        else {
+            rightLabel.backgroundColor = .clear
+        }
         return self
     }
     
@@ -27,6 +30,7 @@ class CustomDataCell: UITableViewCell {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "dd/MM/YY"
         
+        rightLabel.backgroundColor = .clear
         rightLabel.text = dateFormatter.string(from: userData.registrationDate)
         leftLabel.text = "Дата Регистрации:"
         

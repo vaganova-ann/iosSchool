@@ -8,7 +8,6 @@
 import UIKit
 
 protocol ConfigurableRow: UITableViewCell {
-    
     func configureWith(_ configurator: Any) -> UITableViewCell
 }
 

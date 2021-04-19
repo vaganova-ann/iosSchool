@@ -62,7 +62,7 @@ class ProfileViewController: UIViewController {
             return userProfileData
         }
         return ProfileData(login: "Логин пользователя", registrationDate: Date())
-        }
+    }
     
     @objc func logOutAction() {
         keyChain.delete(ApplicationConstants.keychainTokenKey)
@@ -112,8 +112,9 @@ extension ProfileViewController: UIImagePickerControllerDelegate, UINavigationCo
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         
-        guard  let userPhoto = info[.editedImage] as? UIImage else {return}
-        guard let photo = imageToBase64(userPhoto) else {return}
+        guard let userPhoto = info[.editedImage] as? UIImage,
+              let photo = imageToBase64(userPhoto)
+        else { return }
         
         if let autorizationToken = keyChain.get(ApplicationConstants.keychainTokenKey) {
             AuthorizationMockSimulator().postUserImage(token: autorizationToken, base64: photo)

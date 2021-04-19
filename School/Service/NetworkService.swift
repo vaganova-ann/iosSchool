@@ -8,10 +8,9 @@
 import Foundation
 import Alamofire
 
-
 class NetworkService: PlanetsListNetworkService {
     
-    func getPlanetList(page: Int, onRequestCompleted: @escaping ((PlanetsListResultsResponceModel?, Error?) -> ())) {
+    func getPlanetList(page: Int, onRequestCompleted: @escaping ((PlanetsListResultsResponseModel?, Error?) -> ())) {
         performRequest(urlString: NetworkConstants.URLString.planetList+"?page\(page)", onRequestCompleted: onRequestCompleted)
     }
     

@@ -24,7 +24,7 @@
 		E754B39C261B39F0001152D4 /* PKHUD in Frameworks */ = {isa = PBXBuildFile; productRef = E754B39B261B39F0001152D4 /* PKHUD */; };
 		E754B39F261B3AB3001152D4 /* PlanetListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E754B39E261B3AB3001152D4 /* PlanetListViewController.swift */; };
 		E754B3A3261B3E70001152D4 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = E754B3A2261B3E70001152D4 /* Alamofire */; };
-		E754B3AA261B414C001152D4 /* PlanetListResponceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E754B3A9261B414C001152D4 /* PlanetListResponceModel.swift */; };
+		E754B3AA261B414C001152D4 /* PlanetListResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E754B3A9261B414C001152D4 /* PlanetListResponseModel.swift */; };
 		E754B3AD261B4499001152D4 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E754B3AC261B4499001152D4 /* NetworkService.swift */; };
 		E754B3B0261B451E001152D4 /* PlanetsListNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E754B3AF261B451E001152D4 /* PlanetsListNetworkService.swift */; };
 		E78F1B212615F5980096F9F9 /* AuthorizationServerSimulator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E78F1B202615F5980096F9F9 /* AuthorizationServerSimulator.swift */; };
@@ -63,7 +63,7 @@
 		E74ADC642602383D00555080 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E74ADC662602383D00555080 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E754B39E261B3AB3001152D4 /* PlanetListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetListViewController.swift; sourceTree = "<group>"; };
-		E754B3A9261B414C001152D4 /* PlanetListResponceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetListResponceModel.swift; sourceTree = "<group>"; };
+		E754B3A9261B414C001152D4 /* PlanetListResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetListResponseModel.swift; sourceTree = "<group>"; };
 		E754B3AC261B4499001152D4 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		E754B3AF261B451E001152D4 /* PlanetsListNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetsListNetworkService.swift; sourceTree = "<group>"; };
 		E78F1B202615F5980096F9F9 /* AuthorizationServerSimulator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthorizationServerSimulator.swift; sourceTree = "<group>"; };
@@ -182,7 +182,7 @@
 		E754B3A8261B4071001152D4 /* DTO */ = {
 			isa = PBXGroup;
 			children = (
-				E754B3A9261B414C001152D4 /* PlanetListResponceModel.swift */,
+				E754B3A9261B414C001152D4 /* PlanetListResponseModel.swift */,
 			);
 			path = DTO;
 			sourceTree = "<group>";
@@ -402,7 +402,7 @@
 				E71B4F04260E04EC00482EE0 /* PersonTableViewCell.swift in Sources */,
 				E7B8D87E2618638700B5CC7C /* RegistrationViewController.swift in Sources */,
 				E7BB55C42614AAF600FC0015 /* ContactDetailsViewController.swift in Sources */,
-				E754B3AA261B414C001152D4 /* PlanetListResponceModel.swift in Sources */,
+				E754B3AA261B414C001152D4 /* PlanetListResponseModel.swift in Sources */,
 				E71B4F1D260E1E3F00482EE0 /* AnimalTableViewCell.swift in Sources */,
 				E754B3B0261B451E001152D4 /* PlanetsListNetworkService.swift in Sources */,
 				E78F1B2B261602740096F9F9 /* ApplicationConstants.swift in Sources */,
