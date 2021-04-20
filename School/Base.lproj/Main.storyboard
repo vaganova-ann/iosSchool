@@ -344,7 +344,7 @@
         <scene sceneID="8Lf-jl-4Wc">
             <objects>
                 <tabBarController storyboardIdentifier="TabBarController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="NZb-dF-lBs" sceneMemberID="viewController">
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="SfY-oH-F3Z">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="SfY-oH-F3Z">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -358,11 +358,11 @@
             </objects>
             <point key="canvasLocation" x="1029" y="265"/>
         </scene>
-        <!--Collection-->
+        <!--Выбор планеты-->
         <scene sceneID="eg0-vk-Iqa">
             <objects>
                 <navigationController id="d5M-Z6-4EV" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Collection" image="bookmark" catalog="system" id="739-ic-7yT"/>
+                    <tabBarItem key="tabBarItem" title="Выбор планеты" image="earth" id="739-ic-7yT"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="f54-m1-IC6">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -380,7 +380,7 @@
             <objects>
                 <viewController id="VqS-Fe-Chn" customClass="ProfileViewController" customModule="School" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cCX-FE-9e2">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="dd5-1H-bhb">
@@ -425,11 +425,11 @@
             </objects>
             <point key="canvasLocation" x="232" y="1724"/>
         </scene>
-        <!--TableView-->
+        <!--Профиль-->
         <scene sceneID="odT-cy-qLI">
             <objects>
                 <navigationController id="WhQ-FD-R4P" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="TableView" image="book" catalog="system" id="ts8-dX-fc0"/>
+                    <tabBarItem key="tabBarItem" title="Профиль" image="profile" id="ts8-dX-fc0"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="sFQ-he-gvY">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -485,7 +485,7 @@
             <objects>
                 <viewController id="AKI-lD-iVo" customClass="PlanetListViewController" customModule="School" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="F10-Y7-Iju">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="eLS-oR-ZpT">
@@ -513,9 +513,9 @@
         </scene>
     </scenes>
     <resources>
-        <image name="book" catalog="system" width="128" height="102"/>
-        <image name="bookmark" catalog="system" width="112" height="128"/>
+        <image name="earth" width="31" height="30"/>
         <image name="manIcon" width="57" height="77"/>
+        <image name="profile" width="43" height="30"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
