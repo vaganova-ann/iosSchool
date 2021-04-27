@@ -8,15 +8,16 @@
 import UIKit
 import PKHUD
 
-let networkService: PlanetsListNetworkService = NetworkService()
-
 class PlanetListViewController: UIViewController  {
     
     @IBOutlet private var tableView: UITableView!
     
     private var model: [DataAboutPlanet]!
     
-    private var page: Int!
+    private var currendDownloadPage: Int!
+    private var numberOfPages: Int!
+    
+    let networkService: PlanetsListNetworkService = NetworkService()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,9 +27,9 @@ class PlanetListViewController: UIViewController  {
         tableView.dataSource = self
         
         model = []
-        page = 1
+        currendDownloadPage = 1
         
-        loadPlanets(page: page, uiInteractionsAllowed: true)
+        loadPlanets(page: currendDownloadPage, uiInteractionsAllowed: true)
     
         let planetCellNib = UINib(nibName: PlanetListCell.className, bundle: Bundle.main)
         tableView.register(planetCellNib, forCellReuseIdentifier: PlanetListCell.className)
@@ -44,13 +45,21 @@ class PlanetListViewController: UIViewController  {
                   let resultResponse = response
             else { return }
             
-            self.model.append(contentsOf: self.generateModel(planetList: resultResponse))
-            
             DispatchQueue.main.async {
-                self.tableView.reloadData()
+                self.numberOfPages = resultResponse.info.pages
+                
+                let lastIndexPathRow = self.model.count
+                self.model.append(contentsOf: self.generateModel(planetList: resultResponse))
+                
+                var indexes: [IndexPath] = []
+                for index in lastIndexPathRow...self.model.count - 1 {
+                            indexes.append(IndexPath(row: index, section: 0))
+                }
+                self.tableView.insertRows(at: indexes, with: .none)
             }
             
             if uiInteractionsAllowed {
+                self.tableView.reloadData()
                 HUD.hide()
             }
         }
@@ -75,10 +84,11 @@ class PlanetListViewController: UIViewController  {
 
 extension PlanetListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        if indexPath.row == model.count/2 {
-            page += 1
+        if indexPath.row == model.count/2,
+           currendDownloadPage <= numberOfPages {
+            currendDownloadPage += 1
             DispatchQueue.global(qos: .userInitiated).async {
-                self.loadPlanets(page: self.page, uiInteractionsAllowed: false)
+                self.loadPlanets(page: self.currendDownloadPage, uiInteractionsAllowed: false)
             }
         }
     }
