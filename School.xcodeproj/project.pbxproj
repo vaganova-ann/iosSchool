@@ -39,6 +39,8 @@
 		E7B8D895261C79CE00B5CC7C /* LoginCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7B8D893261C79CE00B5CC7C /* LoginCell.xib */; };
 		E7B8D899261C79E500B5CC7C /* CustomDataCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B8D897261C79E500B5CC7C /* CustomDataCell.swift */; };
 		E7B8D89A261C79E500B5CC7C /* CustomDataCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7B8D898261C79E500B5CC7C /* CustomDataCell.xib */; };
+		E7B8D8AA26242C6700B5CC7C /* PlanetListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B8D8A826242C6700B5CC7C /* PlanetListCell.swift */; };
+		E7B8D8AB26242C6700B5CC7C /* PlanetListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7B8D8A926242C6700B5CC7C /* PlanetListCell.xib */; };
 		E7BB55C42614AAF600FC0015 /* ContactDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7BB55C22614AAF600FC0015 /* ContactDetailsViewController.swift */; };
 		E7BB55C82614AAFF00FC0015 /* PesikCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7BB55C62614AAFF00FC0015 /* PesikCell.swift */; };
 		E7BB55CD2614B4ED00FC0015 /* PesikCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7BB55C72614AAFF00FC0015 /* PesikCell.xib */; };
@@ -77,6 +79,8 @@
 		E7B8D893261C79CE00B5CC7C /* LoginCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginCell.xib; sourceTree = "<group>"; };
 		E7B8D897261C79E500B5CC7C /* CustomDataCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomDataCell.swift; sourceTree = "<group>"; };
 		E7B8D898261C79E500B5CC7C /* CustomDataCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomDataCell.xib; sourceTree = "<group>"; };
+		E7B8D8A826242C6700B5CC7C /* PlanetListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetListCell.swift; sourceTree = "<group>"; };
+		E7B8D8A926242C6700B5CC7C /* PlanetListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlanetListCell.xib; sourceTree = "<group>"; };
 		E7BB55C22614AAF600FC0015 /* ContactDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactDetailsViewController.swift; sourceTree = "<group>"; };
 		E7BB55C62614AAFF00FC0015 /* PesikCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PesikCell.swift; sourceTree = "<group>"; };
 		E7BB55C72614AAFF00FC0015 /* PesikCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PesikCell.xib; sourceTree = "<group>"; };
@@ -166,7 +170,6 @@
 				E74ADC612602383D00555080 /* Assets.xcassets */,
 				E74ADC632602383D00555080 /* LaunchScreen.storyboard */,
 				E7B8D87D2618638700B5CC7C /* RegistrationViewController.swift */,
-				E754B39E261B3AB3001152D4 /* PlanetListViewController.swift */,
 			);
 			path = School;
 			sourceTree = "<group>";
@@ -242,9 +245,28 @@
 			path = LoginCell;
 			sourceTree = "<group>";
 		};
+		E7B8D8A626242C0100B5CC7C /* PlanetListViewController */ = {
+			isa = PBXGroup;
+			children = (
+				E7B8D8A726242C3700B5CC7C /* Cells */,
+				E754B39E261B3AB3001152D4 /* PlanetListViewController.swift */,
+			);
+			path = PlanetListViewController;
+			sourceTree = "<group>";
+		};
+		E7B8D8A726242C3700B5CC7C /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				E7B8D8A826242C6700B5CC7C /* PlanetListCell.swift */,
+				E7B8D8A926242C6700B5CC7C /* PlanetListCell.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		E7BB55BE2614AAC600FC0015 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				E7B8D8A626242C0100B5CC7C /* PlanetListViewController */,
 				E7B8D881261C745500B5CC7C /* ProfileViewController */,
 				E7BB55C02614AACD00FC0015 /* ContactDetailsViewController */,
 				E7D5E0952611AB3F007E8864 /* ContactsViewController */,
@@ -374,6 +396,7 @@
 				E7BB55CD2614B4ED00FC0015 /* PesikCell.xib in Resources */,
 				E7B8D89A261C79E500B5CC7C /* CustomDataCell.xib in Resources */,
 				E71B4F1E260E1E3F00482EE0 /* AnimalTableViewCell.xib in Resources */,
+				E7B8D8AB26242C6700B5CC7C /* PlanetListCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -400,6 +423,7 @@
 				E71B4F15260E188300482EE0 /* UIImage+ContactsImage.swift in Sources */,
 				E754B39F261B3AB3001152D4 /* PlanetListViewController.swift in Sources */,
 				E71B4F04260E04EC00482EE0 /* PersonTableViewCell.swift in Sources */,
+				E7B8D8AA26242C6700B5CC7C /* PlanetListCell.swift in Sources */,
 				E7B8D87E2618638700B5CC7C /* RegistrationViewController.swift in Sources */,
 				E7BB55C42614AAF600FC0015 /* ContactDetailsViewController.swift in Sources */,
 				E754B3AA261B414C001152D4 /* PlanetListResponseModel.swift in Sources */,

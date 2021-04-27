@@ -344,7 +344,7 @@
         <scene sceneID="8Lf-jl-4Wc">
             <objects>
                 <tabBarController storyboardIdentifier="TabBarController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="NZb-dF-lBs" sceneMemberID="viewController">
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="SfY-oH-F3Z">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="SfY-oH-F3Z">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -358,17 +358,17 @@
             </objects>
             <point key="canvasLocation" x="1029" y="265"/>
         </scene>
-        <!--Collection-->
+        <!--Выбор планеты-->
         <scene sceneID="eg0-vk-Iqa">
             <objects>
                 <navigationController id="d5M-Z6-4EV" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Collection" image="bookmark" catalog="system" id="739-ic-7yT"/>
+                    <tabBarItem key="tabBarItem" title="Выбор планеты" image="earth" id="739-ic-7yT"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="f54-m1-IC6">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="tLn-sq-A7l" kind="relationship" relationship="rootViewController" id="Hmf-6s-dv5"/>
+                        <segue destination="AKI-lD-iVo" kind="relationship" relationship="rootViewController" id="Q9C-T0-QjX"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0EV-IP-xUS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -380,7 +380,7 @@
             <objects>
                 <viewController id="VqS-Fe-Chn" customClass="ProfileViewController" customModule="School" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cCX-FE-9e2">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="dd5-1H-bhb">
@@ -425,11 +425,11 @@
             </objects>
             <point key="canvasLocation" x="232" y="1724"/>
         </scene>
-        <!--TableView-->
+        <!--Профиль-->
         <scene sceneID="odT-cy-qLI">
             <objects>
                 <navigationController id="WhQ-FD-R4P" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="TableView" image="book" catalog="system" id="ts8-dX-fc0"/>
+                    <tabBarItem key="tabBarItem" title="Профиль" image="profile" id="ts8-dX-fc0"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="sFQ-he-gvY">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -451,7 +451,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="b7K-Og-dHz">
-                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="bqD-9e-bH5">
                                     <size key="itemSize" width="128" height="128"/>
@@ -478,13 +478,44 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ucI-9Q-D2X" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1793" y="1714"/>
+            <point key="canvasLocation" x="3419" y="1724"/>
+        </scene>
+        <!--Planet List View Controller-->
+        <scene sceneID="Ao6-6S-Ml9">
+            <objects>
+                <viewController id="AKI-lD-iVo" customClass="PlanetListViewController" customModule="School" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="F10-Y7-Iju">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="eLS-oR-ZpT">
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="gfr-rA-M64"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="gfr-rA-M64" firstAttribute="bottom" secondItem="eLS-oR-ZpT" secondAttribute="bottom" id="NQ7-vd-Ah0"/>
+                            <constraint firstItem="eLS-oR-ZpT" firstAttribute="top" secondItem="gfr-rA-M64" secondAttribute="top" id="j7I-ik-igl"/>
+                            <constraint firstItem="eLS-oR-ZpT" firstAttribute="leading" secondItem="gfr-rA-M64" secondAttribute="leading" id="mou-bb-yLB"/>
+                            <constraint firstItem="gfr-rA-M64" firstAttribute="trailing" secondItem="eLS-oR-ZpT" secondAttribute="trailing" id="uqi-Ht-Uml"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="TLa-hS-JAY"/>
+                    <connections>
+                        <outlet property="tableView" destination="eLS-oR-ZpT" id="FG5-CP-VbZ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6Z7-hj-5dv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1812" y="1724"/>
         </scene>
     </scenes>
     <resources>
-        <image name="book" catalog="system" width="128" height="102"/>
-        <image name="bookmark" catalog="system" width="112" height="128"/>
+        <image name="earth" width="31" height="30"/>
         <image name="manIcon" width="57" height="77"/>
+        <image name="profile" width="43" height="30"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

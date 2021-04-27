@@ -8,5 +8,5 @@
 import UIKit
 
 protocol PlanetsListNetworkService {
-    func getPlanetList(page: Int, onRequestCompleted: @escaping ((PlanetsListResultsResponseModel?, Error?)->()))
+    func getPlanetList(page: Int, onRequestCompleted: @escaping ((PlanetListResponseModel?, Error?)->()))
 }
