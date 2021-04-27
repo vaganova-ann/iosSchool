@@ -75,7 +75,7 @@ class PlanetListViewController: UIViewController  {
         let informationAboutPlanet = planetList.results
         for planet in informationAboutPlanet {
             if let planetName = planet.name {
-                planets.append(DataAboutPlanet(name: planetName, type: planet.type, population: planet.residents.count))
+                planets.append(DataAboutPlanet(name: planetName, type: planet.type, population: planet.residents.count, residents: planet.residents))
             }
         }
         return planets
@@ -90,6 +90,19 @@ extension PlanetListViewController: UITableViewDelegate {
             DispatchQueue.global(qos: .userInitiated).async {
                 self.loadPlanets(page: self.currendDownloadPage, uiInteractionsAllowed: false)
             }
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: false)
+        
+        let mainStoryBoard = UIStoryboard(name: "Main", bundle: Bundle.main)
+        if let destinationViewController = mainStoryBoard.instantiateViewController(identifier: ResidentsListViewController.className) as? ResidentsListViewController {
+            
+            destinationViewController.residentsUrlList = model[indexPath.row].residents
+            destinationViewController.planetName = model[indexPath.row].name
+            
+            navigationController?.pushViewController(destinationViewController, animated: true)
         }
     }
 }

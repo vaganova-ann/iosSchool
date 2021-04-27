@@ -45,6 +45,9 @@
 		E7BB55C82614AAFF00FC0015 /* PesikCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7BB55C62614AAFF00FC0015 /* PesikCell.swift */; };
 		E7BB55CD2614B4ED00FC0015 /* PesikCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7BB55C72614AAFF00FC0015 /* PesikCell.xib */; };
 		E7C4EBB22604E542006033FA /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C4EBB12604E542006033FA /* CustomButton.swift */; };
+		E7E14A492637ED2C00FDF186 /* ResidentsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E14A482637ED2C00FDF186 /* ResidentsListViewController.swift */; };
+		E7E14A4E2637FFA000FDF186 /* ResidentCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E14A4C2637FFA000FDF186 /* ResidentCollectionViewCell.swift */; };
+		E7E14A4F2637FFA000FDF186 /* ResidentCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7E14A4D2637FFA000FDF186 /* ResidentCollectionViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -85,6 +88,9 @@
 		E7BB55C62614AAFF00FC0015 /* PesikCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PesikCell.swift; sourceTree = "<group>"; };
 		E7BB55C72614AAFF00FC0015 /* PesikCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PesikCell.xib; sourceTree = "<group>"; };
 		E7C4EBB12604E542006033FA /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
+		E7E14A482637ED2C00FDF186 /* ResidentsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResidentsListViewController.swift; sourceTree = "<group>"; };
+		E7E14A4C2637FFA000FDF186 /* ResidentCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResidentCollectionViewCell.swift; sourceTree = "<group>"; };
+		E7E14A4D2637FFA000FDF186 /* ResidentCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ResidentCollectionViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -266,6 +272,7 @@
 		E7BB55BE2614AAC600FC0015 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				E7E14A462637ECE300FDF186 /* ResidentsListViewController */,
 				E7B8D8A626242C0100B5CC7C /* PlanetListViewController */,
 				E7B8D881261C745500B5CC7C /* ProfileViewController */,
 				E7BB55C02614AACD00FC0015 /* ContactDetailsViewController */,
@@ -318,6 +325,24 @@
 				E7D5E0942611AA86007E8864 /* Cells */,
 			);
 			path = ContactsViewController;
+			sourceTree = "<group>";
+		};
+		E7E14A462637ECE300FDF186 /* ResidentsListViewController */ = {
+			isa = PBXGroup;
+			children = (
+				E7E14A4B2637FEFE00FDF186 /* Cell */,
+				E7E14A482637ED2C00FDF186 /* ResidentsListViewController.swift */,
+			);
+			name = ResidentsListViewController;
+			sourceTree = "<group>";
+		};
+		E7E14A4B2637FEFE00FDF186 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				E7E14A4C2637FFA000FDF186 /* ResidentCollectionViewCell.swift */,
+				E7E14A4D2637FFA000FDF186 /* ResidentCollectionViewCell.xib */,
+			);
+			name = Cell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -387,6 +412,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E7E14A4F2637FFA000FDF186 /* ResidentCollectionViewCell.xib in Resources */,
 				E74ADC652602383D00555080 /* LaunchScreen.storyboard in Resources */,
 				E74ADC622602383D00555080 /* Assets.xcassets in Resources */,
 				E71B4F05260E04EC00482EE0 /* PersonTableViewCell.xib in Resources */,
@@ -409,6 +435,7 @@
 			files = (
 				E78F1B212615F5980096F9F9 /* AuthorizationServerSimulator.swift in Sources */,
 				E74ADC5D2602383C00555080 /* ViewController.swift in Sources */,
+				E7E14A492637ED2C00FDF186 /* ResidentsListViewController.swift in Sources */,
 				E7B8D884261C747700B5CC7C /* ProfileViewController.swift in Sources */,
 				E71B4F24260E203700482EE0 /* ConfigurableRow.swift in Sources */,
 				E7B8D88C261C792B00B5CC7C /* PhotosCell.swift in Sources */,
@@ -426,6 +453,7 @@
 				E7B8D8AA26242C6700B5CC7C /* PlanetListCell.swift in Sources */,
 				E7B8D87E2618638700B5CC7C /* RegistrationViewController.swift in Sources */,
 				E7BB55C42614AAF600FC0015 /* ContactDetailsViewController.swift in Sources */,
+				E7E14A4E2637FFA000FDF186 /* ResidentCollectionViewCell.swift in Sources */,
 				E754B3AA261B414C001152D4 /* PlanetListResponseModel.swift in Sources */,
 				E71B4F1D260E1E3F00482EE0 /* AnimalTableViewCell.swift in Sources */,
 				E754B3B0261B451E001152D4 /* PlanetsListNetworkService.swift in Sources */,

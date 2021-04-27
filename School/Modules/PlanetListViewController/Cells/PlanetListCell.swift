@@ -11,6 +11,7 @@ struct DataAboutPlanet {
     var name: String
     var type: String?
     var population: Int?
+    var residents: [String]
 }
 
 class PlanetListCell: UITableViewCell {
