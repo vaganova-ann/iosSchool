@@ -53,7 +53,7 @@ class PlanetListViewController: UIViewController  {
                 
                 var indexes: [IndexPath] = []
                 for index in lastIndexPathRow...self.model.count - 1 {
-                            indexes.append(IndexPath(row: index, section: 0))
+                    indexes.append(IndexPath(row: index, section: 0))
                 }
                 self.tableView.insertRows(at: indexes, with: .none)
             }
