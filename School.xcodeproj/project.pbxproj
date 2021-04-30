@@ -48,6 +48,8 @@
 		E7E14A492637ED2C00FDF186 /* ResidentsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E14A482637ED2C00FDF186 /* ResidentsListViewController.swift */; };
 		E7E14A4E2637FFA000FDF186 /* ResidentCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E14A4C2637FFA000FDF186 /* ResidentCollectionViewCell.swift */; };
 		E7E14A4F2637FFA000FDF186 /* ResidentCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7E14A4D2637FFA000FDF186 /* ResidentCollectionViewCell.xib */; };
+		E7E14A542639547900FDF186 /* ResidentStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E14A532639547900FDF186 /* ResidentStorage.swift */; };
+		E7E14A572639699E00FDF186 /* CharacterData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E14A562639699E00FDF186 /* CharacterData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -91,6 +93,8 @@
 		E7E14A482637ED2C00FDF186 /* ResidentsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResidentsListViewController.swift; sourceTree = "<group>"; };
 		E7E14A4C2637FFA000FDF186 /* ResidentCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResidentCollectionViewCell.swift; sourceTree = "<group>"; };
 		E7E14A4D2637FFA000FDF186 /* ResidentCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ResidentCollectionViewCell.xib; sourceTree = "<group>"; };
+		E7E14A532639547900FDF186 /* ResidentStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResidentStorage.swift; sourceTree = "<group>"; };
+		E7E14A562639699E00FDF186 /* CharacterData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -192,6 +196,7 @@
 			isa = PBXGroup;
 			children = (
 				E754B3A9261B414C001152D4 /* PlanetListResponseModel.swift */,
+				E7E14A562639699E00FDF186 /* CharacterData.swift */,
 			);
 			path = DTO;
 			sourceTree = "<group>";
@@ -332,6 +337,7 @@
 			children = (
 				E7E14A4B2637FEFE00FDF186 /* Cell */,
 				E7E14A482637ED2C00FDF186 /* ResidentsListViewController.swift */,
+				E7E14A532639547900FDF186 /* ResidentStorage.swift */,
 			);
 			name = ResidentsListViewController;
 			sourceTree = "<group>";
@@ -435,6 +441,7 @@
 			files = (
 				E78F1B212615F5980096F9F9 /* AuthorizationServerSimulator.swift in Sources */,
 				E74ADC5D2602383C00555080 /* ViewController.swift in Sources */,
+				E7E14A572639699E00FDF186 /* CharacterData.swift in Sources */,
 				E7E14A492637ED2C00FDF186 /* ResidentsListViewController.swift in Sources */,
 				E7B8D884261C747700B5CC7C /* ProfileViewController.swift in Sources */,
 				E71B4F24260E203700482EE0 /* ConfigurableRow.swift in Sources */,
@@ -460,6 +467,7 @@
 				E78F1B2B261602740096F9F9 /* ApplicationConstants.swift in Sources */,
 				E7C4EBB22604E542006033FA /* CustomButton.swift in Sources */,
 				E71B4F12260E0E8B00482EE0 /* NSObject+ClassName.swift in Sources */,
+				E7E14A542639547900FDF186 /* ResidentStorage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

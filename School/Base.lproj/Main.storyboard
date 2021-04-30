@@ -452,7 +452,7 @@
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="6Om-2g-2Qv">
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" red="0.49509803921568629" green="0.5" blue="0.5" alpha="0.49606544604596808" colorSpace="custom" customColorSpace="sRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="hKX-t6-S30">
                                     <size key="itemSize" width="128" height="128"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -463,7 +463,7 @@
                             </collectionView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="2YP-a1-KOT"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.644211731179678" green="0.65059006515175399" blue="0.65059006515175399" alpha="0.49606544604596808" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="6Om-2g-2Qv" firstAttribute="top" secondItem="2YP-a1-KOT" secondAttribute="top" id="R61-iH-F8E"/>
                             <constraint firstItem="6Om-2g-2Qv" firstAttribute="leading" secondItem="2YP-a1-KOT" secondAttribute="leading" id="ZRa-78-vhi"/>
@@ -531,7 +531,7 @@
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="gfr-rA-M64"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.40388151999999999" green="0.41178941730000002" blue="0.4117120802" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="gfr-rA-M64" firstAttribute="bottom" secondItem="eLS-oR-ZpT" secondAttribute="bottom" id="NQ7-vd-Ah0"/>
                             <constraint firstItem="eLS-oR-ZpT" firstAttribute="top" secondItem="gfr-rA-M64" secondAttribute="top" id="j7I-ik-igl"/>

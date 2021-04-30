@@ -12,6 +12,10 @@ class NetworkService: PlanetsListNetworkService {
     func getPlanetList(page: Int, onRequestCompleted: @escaping ((PlanetListResponseModel?, Error?) -> ())) {
         performRequest(urlString: NetworkConstants.URLString.planetList+"?page=\(page)", onRequestCompleted: onRequestCompleted)
     }
+    func getResidentData(url: String, onRequestCompleted: @escaping ((CharacterData?, Error?) -> ())) {
+        performRequest(urlString: url, onRequestCompleted: onRequestCompleted)
+    }
+    
     
     private func performRequest <ResponseModel: Decodable> (urlString: String, method: HTTPMethod = .get, onRequestCompleted: @escaping ((ResponseModel?, Error?)->())) {
         AF.request(urlString,

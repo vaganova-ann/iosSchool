@@ -14,19 +14,25 @@ class ResidentCollectionViewCell: UICollectionViewCell {
     @IBOutlet private var genderLabel: UILabel!
     @IBOutlet private var speciesLabel: UILabel!
     
+    var idResidentCell = ""
+    
     override func layoutSubviews() {
         self.layer.cornerRadius = 15.0
         self.layer.masksToBounds = true
-        self.layer.borderWidth = 2.0
+        self.layer.borderWidth = 1.0
     }
     
     static func defaultSectionLayout(env:NSCollectionLayoutEnvironment) -> NSCollectionLayoutSection {
         
-        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.5), heightDimension: .fractionalHeight(1.0))
+        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalHeight(1.0))
         let itemLayout = NSCollectionLayoutItem(layoutSize: itemSize)
         
-        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(190))
-        let groupLayout = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [itemLayout])
+        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .absolute(240.0))
+        let groupLayout = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitem: itemLayout, count: 2)
+        
+        let spacing: CGFloat = 20.0
+        groupLayout.contentInsets = .init(top: spacing, leading: spacing, bottom: 0, trailing: spacing)
+        groupLayout.interItemSpacing = .fixed(spacing)
         
         return NSCollectionLayoutSection(group: groupLayout)
     }
