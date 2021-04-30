@@ -2,7 +2,7 @@
 //  ResidentStorage.swift
 //  School
 //
-//  Created by Студент 4 on 4/28/21.
+//  Created by Anna Vaganova on 4/28/21.
 //
 
 import UIKit
@@ -11,7 +11,7 @@ class ResidentStorage {
     
     static let sharedInstance = ResidentStorage()
     
-    var residentDictionary = Dictionary<String, ResidentData>(minimumCapacity: 1000)
+    var residentDictionary = Dictionary<String, ResidentData>(minimumCapacity: 100)
 }
 
 extension ResidentStorage: NSCopying {

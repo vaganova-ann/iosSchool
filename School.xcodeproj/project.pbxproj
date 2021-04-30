@@ -26,7 +26,7 @@
 		E754B3A3261B3E70001152D4 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = E754B3A2261B3E70001152D4 /* Alamofire */; };
 		E754B3AA261B414C001152D4 /* PlanetListResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E754B3A9261B414C001152D4 /* PlanetListResponseModel.swift */; };
 		E754B3AD261B4499001152D4 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E754B3AC261B4499001152D4 /* NetworkService.swift */; };
-		E754B3B0261B451E001152D4 /* PlanetsListNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E754B3AF261B451E001152D4 /* PlanetsListNetworkService.swift */; };
+		E754B3B0261B451E001152D4 /* RickAndMortyDataNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E754B3AF261B451E001152D4 /* RickAndMortyDataNetworkService.swift */; };
 		E78F1B212615F5980096F9F9 /* AuthorizationServerSimulator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E78F1B202615F5980096F9F9 /* AuthorizationServerSimulator.swift */; };
 		E78F1B262615FE420096F9F9 /* KeychainSwift in Frameworks */ = {isa = PBXBuildFile; productRef = E78F1B252615FE420096F9F9 /* KeychainSwift */; };
 		E78F1B2B261602740096F9F9 /* ApplicationConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E78F1B2A261602740096F9F9 /* ApplicationConstants.swift */; };
@@ -72,7 +72,7 @@
 		E754B39E261B3AB3001152D4 /* PlanetListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetListViewController.swift; sourceTree = "<group>"; };
 		E754B3A9261B414C001152D4 /* PlanetListResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetListResponseModel.swift; sourceTree = "<group>"; };
 		E754B3AC261B4499001152D4 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
-		E754B3AF261B451E001152D4 /* PlanetsListNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetsListNetworkService.swift; sourceTree = "<group>"; };
+		E754B3AF261B451E001152D4 /* RickAndMortyDataNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RickAndMortyDataNetworkService.swift; sourceTree = "<group>"; };
 		E78F1B202615F5980096F9F9 /* AuthorizationServerSimulator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthorizationServerSimulator.swift; sourceTree = "<group>"; };
 		E78F1B2A261602740096F9F9 /* ApplicationConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationConstants.swift; sourceTree = "<group>"; };
 		E7B8D87D2618638700B5CC7C /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
@@ -144,7 +144,7 @@
 			isa = PBXGroup;
 			children = (
 				E71B4F23260E203700482EE0 /* ConfigurableRow.swift */,
-				E754B3AF261B451E001152D4 /* PlanetsListNetworkService.swift */,
+				E754B3AF261B451E001152D4 /* RickAndMortyDataNetworkService.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -463,7 +463,7 @@
 				E7E14A4E2637FFA000FDF186 /* ResidentCollectionViewCell.swift in Sources */,
 				E754B3AA261B414C001152D4 /* PlanetListResponseModel.swift in Sources */,
 				E71B4F1D260E1E3F00482EE0 /* AnimalTableViewCell.swift in Sources */,
-				E754B3B0261B451E001152D4 /* PlanetsListNetworkService.swift in Sources */,
+				E754B3B0261B451E001152D4 /* RickAndMortyDataNetworkService.swift in Sources */,
 				E78F1B2B261602740096F9F9 /* ApplicationConstants.swift in Sources */,
 				E7C4EBB22604E542006033FA /* CustomButton.swift in Sources */,
 				E71B4F12260E0E8B00482EE0 /* NSObject+ClassName.swift in Sources */,

@@ -41,6 +41,14 @@
                         <color key="textColor" red="0.33725490196078434" green="0.33725490196078434" blue="0.33725490196078434" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="lfy-7L-7Mi">
+                        <rect key="frame" x="70.5" y="60" width="30" height="30"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="30" id="j5X-cL-FEE"/>
+                            <constraint firstAttribute="width" constant="30" id="qpX-NF-JSh"/>
+                        </constraints>
+                    </activityIndicatorView>
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
@@ -48,7 +56,9 @@
             <constraints>
                 <constraint firstItem="nJI-il-pK8" firstAttribute="centerX" secondItem="ZTg-uK-7eu" secondAttribute="centerX" id="6Eg-Rx-UL9"/>
                 <constraint firstItem="DU1-KH-cxL" firstAttribute="centerX" secondItem="ZTg-uK-7eu" secondAttribute="centerX" id="8kc-XJ-GRT"/>
+                <constraint firstItem="lfy-7L-7Mi" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="60" id="I3z-mM-ypg"/>
                 <constraint firstItem="iFm-9E-Dd3" firstAttribute="centerX" secondItem="ZTg-uK-7eu" secondAttribute="centerX" id="IHt-dn-OYd"/>
+                <constraint firstItem="lfy-7L-7Mi" firstAttribute="centerX" secondItem="ZTg-uK-7eu" secondAttribute="centerX" id="QZM-Qt-WyD"/>
                 <constraint firstItem="FNb-tE-gbP" firstAttribute="centerX" secondItem="ZTg-uK-7eu" secondAttribute="centerX" id="Ucb-5J-3Fm"/>
                 <constraint firstItem="iFm-9E-Dd3" firstAttribute="top" secondItem="DU1-KH-cxL" secondAttribute="bottom" constant="5" id="Ytc-tG-QtP"/>
                 <constraint firstItem="FNb-tE-gbP" firstAttribute="top" secondItem="nJI-il-pK8" secondAttribute="bottom" constant="5" id="fa0-Ty-cAd"/>
@@ -60,6 +70,7 @@
             <size key="customSize" width="171" height="211"/>
             <connections>
                 <outlet property="genderLabel" destination="DU1-KH-cxL" id="7aL-dh-Glb"/>
+                <outlet property="loadActivityIndicatorView" destination="lfy-7L-7Mi" id="k2T-Qd-mBz"/>
                 <outlet property="nameLabel" destination="FNb-tE-gbP" id="bw2-8X-BFP"/>
                 <outlet property="portraitImageView" destination="nJI-il-pK8" id="M79-aw-Cxe"/>
                 <outlet property="speciesLabel" destination="iFm-9E-Dd3" id="2rr-Yz-D1Y"/>

@@ -7,8 +7,9 @@
 
 import Foundation
 import Alamofire
+import UIKit
 
-class NetworkService: PlanetsListNetworkService {
+class NetworkService: RickAndMortyDataNetworkService {
     func getPlanetList(page: Int, onRequestCompleted: @escaping ((PlanetListResponseModel?, Error?) -> ())) {
         performRequest(urlString: NetworkConstants.URLString.planetList+"?page=\(page)", onRequestCompleted: onRequestCompleted)
     }
@@ -16,6 +17,18 @@ class NetworkService: PlanetsListNetworkService {
         performRequest(urlString: url, onRequestCompleted: onRequestCompleted)
     }
     
+    func getResidentImage(url: String,  onRequestCompleted: @escaping ((UIImage?, Error?) -> ())) {
+        
+        AF.request(url, method: .get).response { (responseData) in
+            guard responseData.error == nil,
+                  let data = responseData.data
+            else {
+                onRequestCompleted(nil, responseData.error)
+                return
+            }
+            onRequestCompleted(UIImage(data: data), nil)
+        }
+    }
     
     private func performRequest <ResponseModel: Decodable> (urlString: String, method: HTTPMethod = .get, onRequestCompleted: @escaping ((ResponseModel?, Error?)->())) {
         AF.request(urlString,

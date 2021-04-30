@@ -17,7 +17,7 @@ class PlanetListViewController: UIViewController  {
     private var currendDownloadPage: Int!
     private var numberOfPages: Int!
     
-    let networkService: PlanetsListNetworkService = NetworkService()
+    let networkService: RickAndMortyDataNetworkService = NetworkService()
     
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -2,18 +2,18 @@
 //  ResidentsListViewController.swift
 //  School
 //
-//  Created by Студент 4 on 4/27/21.
+//  Created by Anna Vaganova on 4/27/21.
 //
 
 import UIKit
-import Alamofire
-
 
 struct ResidentData {
     var name: String
     var gender: String
     var species: String
-    var portrait: UIImage?
+    var smallPortrait: UIImage?
+    var bigPortrait: UIImage?
+    
 }
 
 class ResidentsListViewController: UIViewController {
@@ -23,7 +23,7 @@ class ResidentsListViewController: UIViewController {
     var residentsUrlList: [String]?
     var planetName: String?
     
-    let networkService: PlanetsListNetworkService = NetworkService()
+    let networkService: RickAndMortyDataNetworkService = NetworkService()
 
     var collectionViewLayout: UICollectionViewLayout {
            UICollectionViewCompositionalLayout { (section, env) -> NSCollectionLayoutSection in
@@ -50,25 +50,52 @@ class ResidentsListViewController: UIViewController {
         collectionView.register(residentCellNib, forCellWithReuseIdentifier: ResidentCollectionViewCell.className)
     }
     
-    func loadResident(url: String, numberCell: IndexPath) {
+    func loadResident(url: String, cell: ResidentCollectionViewCell) {
 
         DispatchQueue.global(qos: .userInitiated).async {
             
-            self.networkService.getResidentData(url: url) { [weak self] (response, error) in
-                guard let self = self,
-                      let resultResponse = response
+            self.networkService.getResidentData(url: url) { (response, error) in
+                guard let resultResponse = response
                 else { return }
                 
                 DispatchQueue.main.async {
                     let resident = ResidentData(name: resultResponse.name, gender: resultResponse.gender, species: resultResponse.species)
                     ResidentStorage.sharedInstance.residentDictionary[url] = resident
-                    self.collectionView.reloadItems(at: [numberCell])
+                    if cell.idResidentCell == url {
+                        cell.createResidentCell(resident: resident)
+                    }
+                    cell.loadActivityIndicatorView.startAnimating()
+                }
+                
+                if let imageUrl = resultResponse.image {
+                    self.networkService.getResidentImage(url: imageUrl) {  (response, error) in
+                        if let resultImageResponse = response {
+                            
+                            DispatchQueue.main.async {
+                                var residentInfo = ResidentStorage.sharedInstance.residentDictionary[url]
+                                residentInfo?.bigPortrait = resultImageResponse
+                                let resizedImage =  self.resizeImage(bigImage: resultImageResponse, size: CGSize(width: 120, height: 120))
+                                residentInfo?.smallPortrait = resizedImage
+                                ResidentStorage.sharedInstance.residentDictionary[url] = residentInfo
+                                
+                                if cell.idResidentCell == url {
+                                    cell.portraitImageView.image = resizedImage
+                                }
+                                cell.loadActivityIndicatorView.stopAnimating()
+                            }
+                        }
+                    }
                 }
             }
         }
-        
     }
-
+    
+    func resizeImage(bigImage: UIImage, size: CGSize) -> UIImage {
+        let render = UIGraphicsImageRenderer(size: size)
+        return render.image { (context) in
+            bigImage.draw(in: CGRect(origin: .zero, size: size))
+        }
+    }
 }
 
 extension ResidentsListViewController: UICollectionViewDelegate, UICollectionViewDataSource {
@@ -83,16 +110,18 @@ extension ResidentsListViewController: UICollectionViewDelegate, UICollectionVie
         if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ResidentCollectionViewCell.className, for: indexPath) as? ResidentCollectionViewCell,
            let urlList = residentsUrlList {
             
+            cell.loadActivityIndicatorView.hidesWhenStopped = true
+            
             let keyUrl = urlList[indexPath.row]
             cell.idResidentCell = keyUrl
             
-            if let person = ResidentStorage.sharedInstance.residentDictionary[keyUrl]{
+            if let person = ResidentStorage.sharedInstance.residentDictionary[keyUrl] {
                 if cell.idResidentCell == keyUrl {
                     return cell.createResidentCell(resident: person)
                 }
             }
             else {
-                loadResident(url: keyUrl, numberCell: indexPath)
+                loadResident(url: keyUrl, cell: cell)
             }
             
             return cell

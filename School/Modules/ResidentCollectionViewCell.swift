@@ -2,17 +2,20 @@
 //  ResidentCollectionViewCell.swift
 //  School
 //
-//  Created by Студент 4 on 4/27/21.
+//  Created by Anna Vaganova on 4/27/21.
 //
 
 import UIKit
 
 class ResidentCollectionViewCell: UICollectionViewCell {
     
-    @IBOutlet private var portraitImageView: UIImageView!
+    @IBOutlet weak var portraitImageView: UIImageView!
+    @IBOutlet weak var loadActivityIndicatorView: UIActivityIndicatorView!
+    
     @IBOutlet private var nameLabel: UILabel!
     @IBOutlet private var genderLabel: UILabel!
     @IBOutlet private var speciesLabel: UILabel!
+    
     
     var idResidentCell = ""
     
@@ -37,11 +40,12 @@ class ResidentCollectionViewCell: UICollectionViewCell {
         return NSCollectionLayoutSection(group: groupLayout)
     }
     
+    @discardableResult
     func createResidentCell(resident: ResidentData) -> UICollectionViewCell {
         portraitImageView.layer.cornerRadius = 15.0
         portraitImageView.clipsToBounds = true
         
-        if let residentPortrait = resident.portrait {
+        if let residentPortrait = resident.smallPortrait {
             portraitImageView.image = residentPortrait
         }
         else {
