@@ -111,7 +111,6 @@ extension ResidentsListViewController: UICollectionViewDelegate, UICollectionVie
            let urlList = residentsUrlList {
             
             cell.loadActivityIndicatorView.hidesWhenStopped = true
-            cell.loadActivityIndicatorView.startAnimating()
             
             let keyUrl = urlList[indexPath.row]
             cell.idResidentCell = keyUrl
@@ -122,6 +121,7 @@ extension ResidentsListViewController: UICollectionViewDelegate, UICollectionVie
                 }
             }
             else {
+                cell.loadActivityIndicatorView.startAnimating()
                 loadResident(url: keyUrl, cell: cell)
             }
             
