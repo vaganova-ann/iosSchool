@@ -24,10 +24,15 @@ protocol PhotoSelectionProtocol: AnyObject {
     func selectPhoto()
 }
 
+protocol ColorSelectionProtocol: AnyObject {
+    func selectColor()
+}
+
 class ProfileTableViewDataSource: NSObject {
     
     private var profile: ProfileData
     weak var photoSelector: PhotoSelectionProtocol?
+    weak var colorSelector: ColorSelectionProtocol?
     
     init(profile: ProfileData) {
         self.profile = profile
@@ -56,11 +61,11 @@ extension ProfileTableViewDataSource: UITableViewDataSource {
                 return cell.createLoginCell(userData: profile)
             }
         case 2:
-            if let cell = tableView.dequeueReusableCell(withIdentifier: CustomDataCell.className) as? CustomDataCell {
+            if let cell = tableView.dequeueReusableCell(withIdentifier: RegistrationDataCell.className) as? RegistrationDataCell {
                 return cell.createRegistrationDateCell(userData: profile)
             }
         case 3:
-            if let cell = tableView.dequeueReusableCell(withIdentifier: CustomDataCell.className) as? CustomDataCell {
+            if let cell = tableView.dequeueReusableCell(withIdentifier: ColorCell.className) as? ColorCell {
                 return cell.createColorCell(userData: profile)
             }
         default:
@@ -81,6 +86,9 @@ extension ProfileTableViewDataSource: UITableViewDelegate {
         
         if indexPath.row == 0 {
             photoSelector?.selectPhoto()
+        }
+        if indexPath.row == 3 {
+            colorSelector?.selectColor()
         }
     }
 }

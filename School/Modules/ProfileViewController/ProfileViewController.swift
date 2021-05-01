@@ -31,8 +31,11 @@ class ProfileViewController: UIViewController {
         let loginCellNib = UINib(nibName: LoginCell.className, bundle: Bundle.main)
         tableView.register(loginCellNib, forCellReuseIdentifier: LoginCell.className)
         
-        let customDataCellNib = UINib(nibName: CustomDataCell.className, bundle: Bundle.main)
-        tableView.register(customDataCellNib, forCellReuseIdentifier: CustomDataCell.className)
+        let customDataCellNib = UINib(nibName: RegistrationDataCell.className, bundle: Bundle.main)
+        tableView.register(customDataCellNib, forCellReuseIdentifier: RegistrationDataCell.className)
+        
+        let colorDataCellNib = UINib(nibName: ColorCell.className, bundle: Bundle.main)
+        tableView.register(colorDataCellNib, forCellReuseIdentifier: ColorCell.className)
         
         let photosCellNib = UINib(nibName: PhotosCell.className, bundle: Bundle.main)
         tableView.register(photosCellNib, forCellReuseIdentifier: PhotosCell.className)
@@ -45,6 +48,7 @@ class ProfileViewController: UIViewController {
         model = generateModel()
         dataSource = ProfileTableViewDataSource(profile: model)
         dataSource.photoSelector = self
+        dataSource.colorSelector = self
         
         tableView.dataSource = dataSource
         tableView.delegate = dataSource
@@ -125,6 +129,37 @@ extension ProfileViewController: UIImagePickerControllerDelegate, UINavigationCo
             AuthorizationMockSimulator().postUserImage(token: autorizationToken, base64: photo)
         }
         model.photo = userPhoto
+        updateModel()
+        tableView.reloadData()
+        dismiss(animated: true)
+    }
+}
+
+extension ProfileViewController: ColorSelectionProtocol {
+    func selectColor() {
+
+        let picker = UIColorPickerViewController()
+        picker.delegate = self
+        picker.supportsAlpha = false
+        self.present(picker, animated: true, completion: nil)
+    }
+}
+
+extension ProfileViewController: UIColorPickerViewControllerDelegate {
+    
+    func colorPickerViewControllerDidFinish(_ viewController: UIColorPickerViewController) {
+        
+        var red: CGFloat = 0
+        var green: CGFloat = 0
+        var blue: CGFloat = 0
+        var alfa: CGFloat = 0
+        
+        viewController.selectedColor.getRed(&red, green: &green, blue: &blue, alpha: &alfa)
+        
+        model.color = CustomColor(green: Double(green) , red: Double(red) , blue: Double(blue))
+        if let autorizationToken = keyChain.get(ApplicationConstants.keychainTokenKey) {
+            AuthorizationMockSimulator().postPrefferedColor(token: autorizationToken, color: AuthorizationMockSimulator.ApplicationUserPrefferedColor.init(green: Double(green) , red: Double(red) , blue: Double(blue)))
+        }
         updateModel()
         tableView.reloadData()
         dismiss(animated: true)
