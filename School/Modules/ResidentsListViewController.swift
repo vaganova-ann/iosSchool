@@ -13,7 +13,6 @@ struct ResidentData {
     var species: String
     var smallPortrait: UIImage?
     var bigPortrait: UIImage?
-    
 }
 
 class ResidentsListViewController: UIViewController {
@@ -26,10 +25,10 @@ class ResidentsListViewController: UIViewController {
     let networkService: RickAndMortyDataNetworkService = NetworkService()
 
     var collectionViewLayout: UICollectionViewLayout {
-           UICollectionViewCompositionalLayout { (section, env) -> NSCollectionLayoutSection in
-               return ResidentCollectionViewCell.defaultSectionLayout(env: env)
-           }
-       }
+        UICollectionViewCompositionalLayout { (section, env) -> NSCollectionLayoutSection in
+            return ResidentCollectionViewCell.defaultSectionLayout(env: env)
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -64,7 +63,6 @@ class ResidentsListViewController: UIViewController {
                     if cell.idResidentCell == url {
                         cell.createResidentCell(resident: resident)
                     }
-                    cell.loadActivityIndicatorView.startAnimating()
                 }
                 
                 if let imageUrl = resultResponse.image {
@@ -81,8 +79,10 @@ class ResidentsListViewController: UIViewController {
                                 if cell.idResidentCell == url {
                                     cell.portraitImageView.image = resizedImage
                                 }
-                                cell.loadActivityIndicatorView.stopAnimating()
                             }
+                        }
+                        DispatchQueue.main.async {
+                            cell.loadActivityIndicatorView.stopAnimating()
                         }
                     }
                 }
@@ -111,6 +111,7 @@ extension ResidentsListViewController: UICollectionViewDelegate, UICollectionVie
            let urlList = residentsUrlList {
             
             cell.loadActivityIndicatorView.hidesWhenStopped = true
+            cell.loadActivityIndicatorView.startAnimating()
             
             let keyUrl = urlList[indexPath.row]
             cell.idResidentCell = keyUrl
