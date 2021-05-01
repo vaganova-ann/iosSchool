@@ -37,7 +37,10 @@ class ResidentCollectionViewCell: UICollectionViewCell {
         groupLayout.contentInsets = .init(top: spacing, leading: spacing, bottom: 0, trailing: spacing)
         groupLayout.interItemSpacing = .fixed(spacing)
         
-        return NSCollectionLayoutSection(group: groupLayout)
+        let sectionLayout = NSCollectionLayoutSection(group: groupLayout)
+        sectionLayout.contentInsets = .init(top: 0.0, leading: 0.0, bottom: spacing*2.0, trailing: 0.0)
+        
+        return sectionLayout
     }
     
     @discardableResult

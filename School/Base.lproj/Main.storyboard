@@ -97,7 +97,7 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="iXT-fj-4sf">
                                                 <rect key="frame" x="0.0" y="665" width="414" height="117"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qOa-pC-IA2" customClass="CustomButton" customModule="School" customModuleProvider="target">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qOa-pC-IA2">
                                                         <rect key="frame" x="0.0" y="0.0" width="414" height="51"/>
                                                         <color key="backgroundColor" systemColor="systemBlueColor"/>
                                                         <constraints>
@@ -109,7 +109,7 @@
                                                         </state>
                                                         <state key="disabled" title="Не войти"/>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tRT-Li-w9v" customClass="CustomButton" customModule="School" customModuleProvider="target">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tRT-Li-w9v">
                                                         <rect key="frame" x="0.0" y="66" width="414" height="51"/>
                                                         <color key="backgroundColor" systemColor="systemBlueColor"/>
                                                         <constraints>
@@ -223,7 +223,7 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="v7U-ms-h3x">
                                                 <rect key="frame" x="16" y="150" width="398" height="75"/>
                                                 <subviews>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="manIcon" translatesAutoresizingMaskIntoConstraints="NO" id="MfO-JK-AO4">
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bigMan" translatesAutoresizingMaskIntoConstraints="NO" id="MfO-JK-AO4">
                                                         <rect key="frame" x="0.0" y="0.0" width="75" height="75"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="75" id="RAB-3I-SII"/>
@@ -294,7 +294,7 @@
                                             </button>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstItem="v7U-ms-h3x" firstAttribute="top" secondItem="t8p-sq-1Xe" secondAttribute="top" constant="150" id="0hu-ph-CC3"/>
+                                            <constraint firstItem="v7U-ms-h3x" firstAttribute="top" secondItem="t8p-sq-1Xe" secondAttribute="top" priority="500" constant="150" id="0hu-ph-CC3"/>
                                             <constraint firstAttribute="bottom" secondItem="5in-pE-aLB" secondAttribute="bottom" constant="38" id="5yi-6P-Jl1"/>
                                             <constraint firstAttribute="trailing" secondItem="v7U-ms-h3x" secondAttribute="trailing" id="FCn-vK-fZX"/>
                                             <constraint firstItem="v7U-ms-h3x" firstAttribute="leading" secondItem="t8p-sq-1Xe" secondAttribute="leading" constant="16" id="GSC-zJ-jHI"/>
@@ -550,8 +550,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="bigMan" width="208" height="225"/>
         <image name="earth" width="31" height="30"/>
-        <image name="manIcon" width="57" height="77"/>
         <image name="profile" width="43" height="30"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

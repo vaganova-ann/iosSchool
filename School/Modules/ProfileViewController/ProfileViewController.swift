@@ -18,6 +18,11 @@ class ProfileViewController: UIViewController {
     
     let keyChain = KeychainSwift()
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: false)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         

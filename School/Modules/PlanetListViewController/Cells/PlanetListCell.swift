@@ -22,6 +22,7 @@ class PlanetListCell: UITableViewCell {
 
     func createPlanetCell(information: DataAboutPlanet) -> UITableViewCell {
         
+        accessoryType = .disclosureIndicator
         planetNameLabel.text = information.name
         planetTypeLabel.text = information.type
         
