@@ -12,6 +12,7 @@ class ResidentStorage {
     static let sharedInstance = ResidentStorage()
     
     var residentDictionary = Dictionary<String, ResidentData>(minimumCapacity: 100)
+    private init() {}
 }
 
 extension ResidentStorage: NSCopying {
