@@ -2,7 +2,7 @@
 //  PlanetListCell.swift
 //  School
 //
-//  Created by Студент 4 on 4/12/21.
+//  Created by Anna Vaganova on 4/12/21.
 //
 
 import UIKit
@@ -11,6 +11,7 @@ struct DataAboutPlanet {
     var name: String
     var type: String?
     var population: Int?
+    var residents: [String]
 }
 
 class PlanetListCell: UITableViewCell {
