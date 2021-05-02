@@ -27,6 +27,8 @@
 		E754B3AA261B414C001152D4 /* PlanetListResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E754B3A9261B414C001152D4 /* PlanetListResponseModel.swift */; };
 		E754B3AD261B4499001152D4 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E754B3AC261B4499001152D4 /* NetworkService.swift */; };
 		E754B3B0261B451E001152D4 /* RickAndMortyDataNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E754B3AF261B451E001152D4 /* RickAndMortyDataNetworkService.swift */; };
+		E77BF2F7263D884E004459B1 /* ColorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77BF2F5263D884E004459B1 /* ColorCell.swift */; };
+		E77BF2F8263D884E004459B1 /* ColorCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E77BF2F6263D884E004459B1 /* ColorCell.xib */; };
 		E78F1B212615F5980096F9F9 /* AuthorizationServerSimulator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E78F1B202615F5980096F9F9 /* AuthorizationServerSimulator.swift */; };
 		E78F1B262615FE420096F9F9 /* KeychainSwift in Frameworks */ = {isa = PBXBuildFile; productRef = E78F1B252615FE420096F9F9 /* KeychainSwift */; };
 		E78F1B2B261602740096F9F9 /* ApplicationConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E78F1B2A261602740096F9F9 /* ApplicationConstants.swift */; };
@@ -37,8 +39,8 @@
 		E7B8D88D261C792B00B5CC7C /* PhotosCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7B8D88B261C792B00B5CC7C /* PhotosCell.xib */; };
 		E7B8D894261C79CE00B5CC7C /* LoginCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B8D892261C79CE00B5CC7C /* LoginCell.swift */; };
 		E7B8D895261C79CE00B5CC7C /* LoginCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7B8D893261C79CE00B5CC7C /* LoginCell.xib */; };
-		E7B8D899261C79E500B5CC7C /* CustomDataCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B8D897261C79E500B5CC7C /* CustomDataCell.swift */; };
-		E7B8D89A261C79E500B5CC7C /* CustomDataCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7B8D898261C79E500B5CC7C /* CustomDataCell.xib */; };
+		E7B8D899261C79E500B5CC7C /* RegistrationDataCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B8D897261C79E500B5CC7C /* RegistrationDataCell.swift */; };
+		E7B8D89A261C79E500B5CC7C /* RegistrationDataCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7B8D898261C79E500B5CC7C /* RegistrationDataCell.xib */; };
 		E7B8D8AA26242C6700B5CC7C /* PlanetListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B8D8A826242C6700B5CC7C /* PlanetListCell.swift */; };
 		E7B8D8AB26242C6700B5CC7C /* PlanetListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7B8D8A926242C6700B5CC7C /* PlanetListCell.xib */; };
 		E7BB55C42614AAF600FC0015 /* ContactDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7BB55C22614AAF600FC0015 /* ContactDetailsViewController.swift */; };
@@ -73,6 +75,8 @@
 		E754B3A9261B414C001152D4 /* PlanetListResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetListResponseModel.swift; sourceTree = "<group>"; };
 		E754B3AC261B4499001152D4 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		E754B3AF261B451E001152D4 /* RickAndMortyDataNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RickAndMortyDataNetworkService.swift; sourceTree = "<group>"; };
+		E77BF2F5263D884E004459B1 /* ColorCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorCell.swift; sourceTree = "<group>"; };
+		E77BF2F6263D884E004459B1 /* ColorCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ColorCell.xib; sourceTree = "<group>"; };
 		E78F1B202615F5980096F9F9 /* AuthorizationServerSimulator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthorizationServerSimulator.swift; sourceTree = "<group>"; };
 		E78F1B2A261602740096F9F9 /* ApplicationConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationConstants.swift; sourceTree = "<group>"; };
 		E7B8D87D2618638700B5CC7C /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
@@ -82,8 +86,8 @@
 		E7B8D88B261C792B00B5CC7C /* PhotosCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhotosCell.xib; sourceTree = "<group>"; };
 		E7B8D892261C79CE00B5CC7C /* LoginCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCell.swift; sourceTree = "<group>"; };
 		E7B8D893261C79CE00B5CC7C /* LoginCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginCell.xib; sourceTree = "<group>"; };
-		E7B8D897261C79E500B5CC7C /* CustomDataCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomDataCell.swift; sourceTree = "<group>"; };
-		E7B8D898261C79E500B5CC7C /* CustomDataCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomDataCell.xib; sourceTree = "<group>"; };
+		E7B8D897261C79E500B5CC7C /* RegistrationDataCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationDataCell.swift; sourceTree = "<group>"; };
+		E7B8D898261C79E500B5CC7C /* RegistrationDataCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegistrationDataCell.xib; sourceTree = "<group>"; };
 		E7B8D8A826242C6700B5CC7C /* PlanetListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetListCell.swift; sourceTree = "<group>"; };
 		E7B8D8A926242C6700B5CC7C /* PlanetListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlanetListCell.xib; sourceTree = "<group>"; };
 		E7BB55C22614AAF600FC0015 /* ContactDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactDetailsViewController.swift; sourceTree = "<group>"; };
@@ -201,6 +205,15 @@
 			path = DTO;
 			sourceTree = "<group>";
 		};
+		E77BF2F4263D8817004459B1 /* ColorCell */ = {
+			isa = PBXGroup;
+			children = (
+				E77BF2F5263D884E004459B1 /* ColorCell.swift */,
+				E77BF2F6263D884E004459B1 /* ColorCell.xib */,
+			);
+			path = ColorCell;
+			sourceTree = "<group>";
+		};
 		E78F1B28261602160096F9F9 /* Constans */ = {
 			isa = PBXGroup;
 			children = (
@@ -222,6 +235,7 @@
 		E7B8D882261C746300B5CC7C /* Cell */ = {
 			isa = PBXGroup;
 			children = (
+				E77BF2F4263D8817004459B1 /* ColorCell */,
 				E7B8D891261C798F00B5CC7C /* LoginCell */,
 				E7B8D890261C797500B5CC7C /* CustomDataCell */,
 				E7B8D88F261C794600B5CC7C /* PhotosCell */,
@@ -241,8 +255,8 @@
 		E7B8D890261C797500B5CC7C /* CustomDataCell */ = {
 			isa = PBXGroup;
 			children = (
-				E7B8D897261C79E500B5CC7C /* CustomDataCell.swift */,
-				E7B8D898261C79E500B5CC7C /* CustomDataCell.xib */,
+				E7B8D897261C79E500B5CC7C /* RegistrationDataCell.swift */,
+				E7B8D898261C79E500B5CC7C /* RegistrationDataCell.xib */,
 			);
 			path = CustomDataCell;
 			sourceTree = "<group>";
@@ -423,10 +437,11 @@
 				E74ADC622602383D00555080 /* Assets.xcassets in Resources */,
 				E71B4F05260E04EC00482EE0 /* PersonTableViewCell.xib in Resources */,
 				E74ADC602602383C00555080 /* Main.storyboard in Resources */,
+				E77BF2F8263D884E004459B1 /* ColorCell.xib in Resources */,
 				E7B8D88D261C792B00B5CC7C /* PhotosCell.xib in Resources */,
 				E7B8D895261C79CE00B5CC7C /* LoginCell.xib in Resources */,
 				E7BB55CD2614B4ED00FC0015 /* PesikCell.xib in Resources */,
-				E7B8D89A261C79E500B5CC7C /* CustomDataCell.xib in Resources */,
+				E7B8D89A261C79E500B5CC7C /* RegistrationDataCell.xib in Resources */,
 				E71B4F1E260E1E3F00482EE0 /* AnimalTableViewCell.xib in Resources */,
 				E7B8D8AB26242C6700B5CC7C /* PlanetListCell.xib in Resources */,
 			);
@@ -444,10 +459,11 @@
 				E7E14A572639699E00FDF186 /* CharacterData.swift in Sources */,
 				E7E14A492637ED2C00FDF186 /* ResidentsListViewController.swift in Sources */,
 				E7B8D884261C747700B5CC7C /* ProfileViewController.swift in Sources */,
+				E77BF2F7263D884E004459B1 /* ColorCell.swift in Sources */,
 				E71B4F24260E203700482EE0 /* ConfigurableRow.swift in Sources */,
 				E7B8D88C261C792B00B5CC7C /* PhotosCell.swift in Sources */,
 				E7BB55C82614AAFF00FC0015 /* PesikCell.swift in Sources */,
-				E7B8D899261C79E500B5CC7C /* CustomDataCell.swift in Sources */,
+				E7B8D899261C79E500B5CC7C /* RegistrationDataCell.swift in Sources */,
 				E7B8D894261C79CE00B5CC7C /* LoginCell.swift in Sources */,
 				E754B3AD261B4499001152D4 /* NetworkService.swift in Sources */,
 				E7B8D888261C776000B5CC7C /* ProfileTableViewDataSource.swift in Sources */,

@@ -22,6 +22,9 @@ class PlanetListViewController: UIViewController  {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.title = "Выбор планеты"
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(image: UIImage(systemName: "arrow.clockwise"), style: .done, target: self, action:  #selector(self.reloaButtondAction))
+        
         HUD.registerForKeyboardNotifications()
         tableView.delegate = self
         tableView.dataSource = self
@@ -33,6 +36,14 @@ class PlanetListViewController: UIViewController  {
     
         let planetCellNib = UINib(nibName: PlanetListCell.className, bundle: Bundle.main)
         tableView.register(planetCellNib, forCellReuseIdentifier: PlanetListCell.className)
+    }
+    
+    @objc func reloaButtondAction()
+    {
+        tableView.setContentOffset(.zero, animated: true)
+        currendDownloadPage = 1
+        model.removeAll()
+        loadPlanets(page: currendDownloadPage, uiInteractionsAllowed: true)
     }
     
     func loadPlanets(page: Int, uiInteractionsAllowed: Bool) {

@@ -17,13 +17,13 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k83-Yz-gDs">
-                        <rect key="frame" x="487" y="39.5" width="31" height="15"/>
+                        <rect key="frame" x="502" y="39.5" width="31" height="15"/>
                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gcp-M9-cND">
-                        <rect key="frame" x="16" y="12" width="42" height="21"/>
+                        <rect key="frame" x="16" y="12" width="447" height="21"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="21" id="IhM-VV-x2h"/>
                         </constraints>
@@ -40,28 +40,20 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow.right" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="f91-9j-vv5">
-                        <rect key="frame" x="523" y="34.5" width="30" height="25"/>
-                        <constraints>
-                            <constraint firstAttribute="width" constant="30" id="HZI-7Q-OQk"/>
-                            <constraint firstAttribute="height" constant="30" id="h7a-5j-MTu"/>
-                        </constraints>
-                    </imageView>
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="bottom" secondItem="xTH-F5-qRi" secondAttribute="bottom" constant="11" id="2UA-MO-jXY"/>
+                    <constraint firstAttribute="trailing" secondItem="gcp-M9-cND" secondAttribute="trailing" constant="100" id="BP5-yq-VGO"/>
                     <constraint firstItem="xTH-F5-qRi" firstAttribute="top" secondItem="gcp-M9-cND" secondAttribute="bottom" constant="1" id="ExY-fc-j8N"/>
-                    <constraint firstAttribute="trailing" secondItem="f91-9j-vv5" secondAttribute="trailing" constant="10" id="Xk2-H2-MUu"/>
                     <constraint firstItem="xTH-F5-qRi" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="dkz-Fe-tgQ"/>
                     <constraint firstItem="gcp-M9-cND" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="koh-jC-b3E"/>
-                    <constraint firstAttribute="trailing" secondItem="k83-Yz-gDs" secondAttribute="trailing" constant="45" id="rlT-iz-vM1"/>
+                    <constraint firstAttribute="trailing" secondItem="k83-Yz-gDs" secondAttribute="trailing" constant="30" id="rlT-iz-vM1"/>
                     <constraint firstItem="gcp-M9-cND" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="12" id="sVy-SY-ugq"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <color key="backgroundColor" red="0.76862745098039209" green="0.76862745098039209" blue="0.76862745098039209" alpha="0.89803921568627454" colorSpace="calibratedRGB"/>
             <constraints>
-                <constraint firstItem="f91-9j-vv5" firstAttribute="centerY" secondItem="njF-e1-oar" secondAttribute="centerY" id="HyG-Pj-iR7"/>
                 <constraint firstItem="k83-Yz-gDs" firstAttribute="centerY" secondItem="njF-e1-oar" secondAttribute="centerY" id="kbT-lh-7io"/>
             </constraints>
             <connections>
@@ -72,7 +64,4 @@
             <point key="canvasLocation" x="16.666666666666668" y="92.410714285714278"/>
         </tableViewCell>
     </objects>
-    <resources>
-        <image name="arrow.right" catalog="system" width="128" height="98"/>
-    </resources>
 </document>
